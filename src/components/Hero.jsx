@@ -42,11 +42,11 @@ pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
 
           {/* BUTTONS */}
           <div className="flex gap-4 mt-8 flex-wrap">
-            <button className="bg-accent text-white bg-amber-300 px-7 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg">
+            <button className="bg-accent text-black bg-yellow-400  px-7 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg hover:cursor-pointer">
               Download E-Catalogue
             </button>
 
-            <button className="border border-white bg-white px-7 py-3 rounded-xl hover:bg-white hover:text-black transition">
+            <button className="border border-white font-semibold text-black bg-white px-7 py-3 rounded-xl hover:bg-white hover:text-black transition hover:cursor-pointer">
               Explore Products
             </button>
           </div>

@@ -1,58 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ShieldCheck, Building2, MapPin, BadgeCheck, Settings, Factory } from "lucide-react";
 
 const stats = [
-  {
-    number: "30+",
-    label: "Years Experience",
-  },
-  {
-    number: "1000+",
-    label: "Projects Completed",
-  },
-  {
-    number: "Govt & Infra",
-    label: "Trusted Clients",
-  },
-  {
-    number: "Pan India",
-    label: "Service Reach",
-  },
+  { number: "30+", label: "Years Experience", icon: ShieldCheck },
+  { number: "1000+", label: "Projects Completed", icon: Factory },
+  { number: "Govt & Infra", label: "Trusted Clients", icon: Building2 },
+  { number: "Pan India", label: "Service Reach", icon: MapPin },
+  { number: "ISO Certified", label: "Quality Standards", icon: BadgeCheck },
+  { number: "Custom Built", label: "Project Solutions", icon: Settings },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="relative bg-gradient-to-br from-[#0d3b66] via-[#154c79] to-[#0a2540] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0d3b66] via-[#154c79] to-[#0a2540] py-14 sm:py-16">
 
-      {/* subtle glow */}
+      {/* glow */}
       <div className="absolute w-[300px] h-[300px] bg-accent/20 blur-[100px] rounded-full top-[-80px] left-[-80px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10">
 
-        {/* grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-white">
+        {/* SLIDER */}
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 20,
+            ease: "linear",
+          }}
+        >
+          {/* DUPLICATE ARRAY FOR LOOP */}
+          {[...stats, ...stats].map((item, index) => (
+            <div
+  key={index}
+  className="group relative min-w-[240px] md:min-w-[260px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl px-4 md:px-16 py-4 text-center text-white transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:bg-white/10 hover:border-blue-400/40 hover:shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+>
 
-          {stats.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-accent">
-                {item.number}
-              </h3>
+  {/* 🔥 GLOW */}
+  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-xl  -z-10"></div>
 
-              <p className="text-gray-300 text-sm mt-2">
-                {item.label}
-              </p>
-            </motion.div>
+  {/* ICON */}
+  <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-md shadow-yellow-500/20">
+    <item.icon className="text-black" size={28} />
+  </div>
+
+  {/* NUMBER */}
+  <h3 className="text-2xl md:text-3xl font-semibold text-accent tracking-tight">
+    {item.number}
+  </h3>
+
+  {/* LABEL */}
+  <p className="text-gray-300 text-sm mt-2 tracking-wide leading-snug">
+    {item.label}
+  </p>
+
+</div>
           ))}
-
-        </div>
+        </motion.div>
 
       </div>
     </section>

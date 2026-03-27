@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: "Concertina Coil",
-    desc: "Razor sharp security solution for high-risk zones.",
+    desc: "Razor sharp security solution for high-risk zones, built for strength, and maximum perimeter protection.",
     img: "https://5.imimg.com/data5/SELLER/Default/2022/2/EQ/EO/NA/144005482/farming-solar-fencing-service-500x500.jpg",
   },
   {
@@ -56,37 +56,61 @@ export default function Services() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
           {services.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-black/30 transition-all duration-300"
-            >
-              {/* IMAGE */}
-              <div className="overflow-hidden">
-                <img
-                  src={`${item.img}?auto=format&fit=crop&w=800&q=80`}
-                  alt={item.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
-                />
-              </div>
+           <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: index * 0.1 }}
+  viewport={{ once: true }}
+  className="group rounded-2xl overflow-hidden bg-[#0b2e4f]/40 border border-white/10 hover:shadow-xl transition-all duration-300"
+>
 
-              {/* CONTENT */}
-              <div className="p-6">
-                <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-accent transition">
-                  {item.title}
-                </h3>
+  {/* IMAGE */}
+  <div className="relative h-[220px] overflow-hidden">
+    <img
+      src={`${item.img}?auto=format&fit=crop&w=800&q=80`}
+      alt={item.title}
+      className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+    />
 
-                <p className="text-gray-300 text-sm">
-                  {item.desc}
-                </p>
+    {/* OVERLAY */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent"></div>
 
-                {/* accent line */}
-                <div className="mt-4 h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-300"></div>
-              </div>
-            </motion.div>
+    {/* OPTIONAL TAG */}
+    <span className="absolute top-3 left-3 bg-accent bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-semibold">
+      Premium
+    </span>
+  </div>
+
+  {/* CONTENT */}
+  <div className="p-5">
+
+    {/* TITLE */}
+    <h3 className="text-white text-lg font-semibold mb-2 group-hover:text-accent transition">
+      {item.title}
+    </h3>
+
+    {/* ⭐ STARS */}
+    <div className="flex gap-1 mb-2">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <span key={i} className="text-yellow-400 text-sm">★</span>
+      ))}
+    </div>
+
+    {/* DESCRIPTION */}
+    <p className="text-gray-300 text-sm mb-4 min-h-14">
+      {item.desc}
+    </p>
+
+    {/* FOOTER */}
+  <div className="mt-4">
+  <button className="w-full bg-accent text-black py-2.5 bg-yellow-400 rounded-lg font-semibold text-sm hover:scale-[1.03] hover:shadow-lg transition-all duration-300 hover:cursor-pointer">
+    View Details
+  </button>
+</div>
+  </div>
+
+</motion.div>
           ))}
 
         </div>

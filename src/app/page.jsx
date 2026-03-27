@@ -4,16 +4,21 @@ import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
+import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <TrustBar />
       <Services />
       <Projects />
-      <WhyChooseUs/>
+      <WhyChooseUs />
+      <Testimonials />
+      <FAQ/>
+      <CTA/>
     </>
   );
 }
