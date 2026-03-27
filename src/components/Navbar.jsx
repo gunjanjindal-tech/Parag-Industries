@@ -1,6 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+  { name: "Services", path: "/services" },
+  { name: "Projects", path: "/projects" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
 
 export default function Navbar() {
   return (
@@ -18,13 +28,13 @@ export default function Navbar() {
 
         {/* NAV LINKS */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {["Home", "Products", "Services", "Projects", "About", "Contact"].map((item) => (
-            <a key={item} href="#" className="relative group">
-              {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-        </nav>
+  {navLinks.map((item) => (
+    <Link key={item.name} href={item.path} className="relative group">
+      {item.name}
+      <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
+    </Link>
+  ))}
+</nav>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
