@@ -1,124 +1,170 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    emailjs
+      .sendForm(
+        "service_iol0dd6",
+        "template_zz580zq",
+        formRef.current,
+        "r9on9WiBaJbRQxq93"
+      )
+      .then(
+  () => {
+    setStatus("✅ Inquiry sent successfully!");
+    setLoading(false);
+    formRef.current.reset();
+
+    // ⬇️ ADD THIS (auto hide after 3 sec)
+    setTimeout(() => {
+      setStatus("");
+    }, 3000);
+  },
+  () => {
+    setStatus("❌ Failed to send. Please try again.");
+    setLoading(false);
+
+    setTimeout(() => {
+      setStatus("");
+    }, 3000);
+  }
+);
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden 
-    bg-gradient-to-br from-primary via-[#0d3b66] to-[#051923]
+    <section className="relative overflow-hidden 
+    bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923]
     pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
 
-      {/* GLOW EFFECTS */}
-      <div className="absolute w-[500px] h-[500px] bg-accent/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
+      {/* GLOW */}
+      <div className="absolute w-[500px] h-[500px] bg-yellow-400/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
       <div className="absolute w-[400px] h-[400px] bg-blue-500/20 blur-[100px] rounded-full bottom-[-100px] right-[-100px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* LEFT SIDE */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-sm tracking-widest text-gray-100 font-medium mb-4">
-            GET IN TOUCH
-          </p>
+        {/* HEADER */}
+        <div className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
+            <p className="text-sm tracking-widest text-gray-300 font-medium mb-4">
+              CONTACT US
+            </p>
 
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Let’s Build Something <br />
-            <span className="text-accent">Strong Together</span>
-          </h1>
+            <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.2] tracking-tight">
+              <span className="block sm:inline">Let’s Build Your</span>{" "}
+              <span className="text-yellow-400 block sm:inline">
+                Next Project
+              </span>
+            </h1>
 
-          <p className="mt-5 text-gray-300 max-w-lg text-lg">
-            Have a project in mind or need fencing solutions? Reach out to us —
-            our team is ready to assist you with the best industry expertise.
-          </p>
+            <p className="mt-5 text-gray-300 max-w-xl mx-auto text-base sm:text-lg">
+              Talk to our experts for industrial fencing solutions tailored to
+              your needs.
+            </p>
+          </motion.div>
+        </div>
 
-          {/* CONTACT INFO */}
-          <div className="mt-8 space-y-5">
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
 
-            <div className="flex items-center gap-4">
-              <div className="bg-white/10 p-3 rounded-xl">
-                <Mail className="text-accent" size={20} />
-              </div>
-              <p className="text-gray-300">info@paragindustries.com</p>
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col h-full"
+          >
+            <h2 className="text-white text-xl sm:text-2xl font-semibold mb-3">
+              Contact Information
+            </h2>
+
+            <p className="text-gray-300 text-sm sm:text-base mb-6">
+              Reach out to us for product inquiries, quotations, or project discussions.
+            </p>
+
+            <div className="space-y-4">
+
+              <a href="tel:+919829080341" className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
+                <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <p className="text-white font-medium">Phone</p>
+                  <p className="text-gray-300 text-sm">+91-9829080341</p>
+                </div>
+              </a>
+
+              <a href="mailto:paragindustries140@gmail.com" className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
+                <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <p className="text-white font-medium">Email</p>
+                  <p className="text-gray-300 text-sm">paragindustries140@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="#" className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
+                <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <p className="text-white font-medium">Address</p>
+                  <p className="text-gray-300 text-sm">
+                    G-1-30, Road No. 2A, RIICO Industrial Area, Jaipur
+                  </p>
+                </div>
+              </a>
+
             </div>
+          </motion.div>
 
-            <div className="flex items-center gap-4">
-              <div className="bg-white/10 p-3 rounded-xl">
-                <Phone className="text-accent" size={20} />
-              </div>
-              <p className="text-gray-300">+91 98765 43210</p>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="bg-white/10 p-3 rounded-xl">
-                <MapPin className="text-accent" size={20} />
-              </div>
-              <p className="text-gray-300">
-                Rajasthan, India
-              </p>
-            </div>
-
-          </div>
-        </motion.div>
-
-        {/* RIGHT SIDE - FORM */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-        >
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
-
-            <h3 className="text-xl font-semibold text-white mb-6">
-              Send a Message
+          {/* RIGHT FORM */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col h-full"
+          >
+            <h3 className="text-white text-lg sm:text-xl font-semibold mb-5">
+              Send Message
             </h3>
 
-            <form className="space-y-5">
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-4 flex flex-col">
 
-              {/* NAME */}
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-accent"
-              />
+              <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              {/* EMAIL */}
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-accent"
-              />
+              <input type="email" name="email" placeholder="Email Address" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              {/* PHONE */}
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-accent"
-              />
+              <input type="text" name="phone" placeholder="Phone Number" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              {/* MESSAGE */}
-              <textarea
-                rows="4"
-                placeholder="Your Message"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-accent"
-              />
+              <textarea name="message" rows="4" placeholder="Tell us about your project..." required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              {/* BUTTON */}
-              <button
-                type="submit"
-                className="w-full bg-accent text-black py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
-              >
-                Send Message
+              <button type="submit" disabled={loading} className="mt-2 w-full bg-yellow-400 text-black py-3 rounded-xl font-semibold">
+                {loading ? "Sending..." : "Submit Inquiry"}
               </button>
 
+              {/* MESSAGE BELOW BUTTON */}
+              {status && (
+                <p className={`text-sm mt-2 ${status.includes("✅") ? "text-green-400" : "text-red-400"}`}>
+                  {status}
+                </p>
+              )}
+
             </form>
+          </motion.div>
 
-          </div>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
