@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton"; // ✅ ADD THIS
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Navbar from "@/components/Navbar";   // ✅ ADD
+import Footer from "@/components/Footer";   // ✅ ADD
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,8 +25,20 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body className="min-h-full flex flex-col bg-[#031625] text-white">
+
+        {/* HEADER */}
+        <Navbar />
+
+        {/* MAIN CONTENT */}
+        <main className="flex-1">
+          {children}
+        </main>
+
+        {/* FOOTER */}
+        <Footer />
+
+        {/* FLOATING BUTTON */}
         <WhatsAppButton />
 
       </body>
