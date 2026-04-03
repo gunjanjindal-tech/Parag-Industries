@@ -1,0 +1,65 @@
+export const products = [
+  {
+    slug: "3d-fence",
+    title: "3D Fence",
+    image: "/images/products/3d-fence.jpg",
+    desc: "Modern welded panel system with V-bends for added rigidity, clean appearance and long service life.",
+    tags: ["Perimeter Security", "Powder Coated", "Solar Parks"],
+  },
+  {
+    slug: "anti-climb-fence",
+    title: "Anti-Climb Fence",
+    image: "/images/products/anti-climb-fence.jpg",
+    desc: "Dense mesh security fencing designed to reduce climbing, tampering and unauthorized access.",
+    tags: ["High Security", "Critical Zones", "Industrial Sites"],
+  },
+  {
+    slug: "chain-link-fence",
+    image: "/images/products/chain-link-fence.jpg", // ✅ FIXED
+    title: "Chain Link Fence",
+    desc: "Versatile and cost-effective fencing option suited for wide boundaries and uneven site conditions.",
+    tags: ["Budget Friendly", "Fast Installation", "Large Boundaries"],
+  },
+  {
+    slug: "barbed-wire",
+    title: "Barbed Wire",
+    image: "/images/products/barbed-wire.jpg",
+    desc: "A reliable deterrent layer used for top security lines, agricultural protection and site boundaries.",
+    tags: ["Deterrent Layer", "Boundary Protection", "Low Maintenance"],
+  },
+  {
+    slug: "concertina-coil",
+    title: "Concertina Coil",
+    image: "/images/products/concertina-coil.jpg",
+    desc: "Razor coil barrier built for high-risk areas where stronger intrusion resistance is required.",
+    tags: ["Restricted Areas", "High Deterrence", "Security Upgrade"],
+  },
+  {
+    slug: "gabion-box",
+    title: "Gabion Box",
+    image: "/images/products/gabion-box.webp",
+    desc: "Heavy-duty wire mesh box system used for erosion control, retaining work and landscape stability.",
+    tags: ["Slope Support", "Civil Works", "Durable Mesh"],
+  },
+  {
+    slug: "gi-wire",
+    title: "GI Wire",
+    image: "/images/products/gi-wire.jpg",
+    desc: "Galvanized wire suitable for fencing, fabrication, tying and a range of industrial applications.",
+    tags: ["Galvanized Finish", "Multi-Purpose", "Consistent Quality"],
+  },
+  {
+    slug: "gi-angle",
+    title: "GI / MS Angle",
+    image: "/images/products/gi-angle.jpg",
+    desc: "Structural angle sections used for fencing support frameworks and site fabrication needs.",
+    tags: ["Structural Support", "Fabrication", "Heavy Duty"],
+  },
+  {
+    slug: "knotted-fence",
+    title: "Knotted Wire Fence",
+    image: "/images/products/knotted-fence-1.webp",
+    desc: "Flexible fencing system for agricultural, open land and rough terrain applications.",
+    tags: ["Rural Sites", "Uneven Terrain", "Flexible Layout"],
+  },
+];
