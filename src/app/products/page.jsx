@@ -13,6 +13,7 @@ ArrowRight,
   ShieldCheck,
   SunMedium,
 } from "lucide-react";
+import CTA from "@/components/CTA";
 
 
 
@@ -55,7 +56,7 @@ const fadeUp = {
 
 export default function ProductsPage() {
   return (
-    <section       className="relative overflow-hidden       bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] pt-28 pb-24 sm:pt-32 sm:pb-28">
+    <section       className="relative overflow-hidden       bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] pt-20 ">
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-8 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
         <div className="absolute right-[-10%] top-1/3 h-80 w-80 rounded-full bg-cyan-400/10 blur-[130px]" />
@@ -76,49 +77,66 @@ export default function ProductsPage() {
               Product Portfolio
             </div>
 
-            <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
-              Fencing and wire solutions built for
-              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
-              solar projects, industrial sites and secure boundaries.
-            </span>
-          </h1>
+            <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-5xl">
+  Engineered fencing solutions for
+  <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+    solar parks, industrial security & large-scale infrastructure.
+  </span>
+</h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
-              Explore Parag Industries&apos; product range designed for strength,
-              outdoor durability and practical execution. From solar plant
-              boundaries to high-security zones, these systems are selected to
-              support real project conditions.
+<p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+  At Parag Industries, we deliver high-strength fencing systems designed for durability,
+  scalability, and real-world site conditions. From solar power plants to industrial
+  zones, our solutions ensure long-term security with minimal maintenance.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {["Solar Project Ready", "Custom Requirement Support", "Industrial Grade Materials"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-slate-100 backdrop-blur-xl"
-                  >
-                    {item}
-                  </span>
-                )
-              )}
-            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 text-center">
+  {[
+    "10+ Years Industry Experience",
+    "Trusted by Industrial Clients",
+    "Pan India Supply Capability",
+    "Custom Project Solutions",
+  ].map((item) => (
+    <div key={item} className="text-sm text-slate-300">
+      <CheckCircle2 className="mx-auto mb-2 text-yellow-300" />
+      {item}
+    </div>
+  ))}
+</div>
+            
+           <div className="mt-8 flex flex-col gap-3 px-4 sm:flex-row sm:flex-wrap sm:justify-start">
+  {[
+"Solar Project Ready",
+    "Custom Requirement Support",
+    "Industrial Grade Materials",
+  ].map((item) => (
+    <span
+      key={item}
+      className="w-full sm:w-auto text-center rounded-full border border-white/12 bg-white/6 px-4 py-3 text-sm text-slate-100 backdrop-blur-xl"
+    >
+      {item}
+    </span>
+  ))}
+</div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 shadow-[0_18px_40px_rgba(250,204,21,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
-              >
-                Request a Quote
-                <ArrowRight size={18} />
-              </Link>
-              <a
-                href="tel:+919829080341"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:border-yellow-300/50 hover:bg-white/10"
-              >
-                <Phone size={18} />
-                Talk to Sales
-              </a>
-            </div>
+     <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-4 px-4">
+  
+  <Link
+    href="/contact"
+    className="w-full sm:w-auto flex justify-center items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 shadow-[0_18px_40px_rgba(250,204,21,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
+  >
+    Request a Quote
+    <ArrowRight size={18} />
+  </Link>
+
+  <a
+    href="tel:+919829080341"
+    className="w-full sm:w-auto flex justify-center items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:border-yellow-300/50 hover:bg-white/10"
+  >
+    <Phone size={18} />
+    Talk to Sales
+  </a>
+</div>
           </motion.div>
 
           <motion.div
@@ -193,61 +211,82 @@ export default function ProductsPage() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Choose the right system for protection, structure and site conditions.
           </h2>
-          <p className="mx-auto max-w-3xl text-base leading-8 text-slate-300">
-            Each product below can support different project needs, from basic
-            perimeter control to heavy-duty protection around solar and
-            industrial installations.
+          <p className="mx-auto max-w-5xl text-base leading-6 text-slate-300">
+            Our product range is engineered to meet diverse site conditions — from solar
+  park perimeters to industrial high-security zones. Each solution is optimized
+  for durability, installation efficiency, and long-term performance.
           </p>
         </motion.div>
 
-<div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 rounded-[2rem] overflow-hidden">
-            {products.map((product, index) => (
-            <motion.article
-              key={product.slug}
-              {...fadeUp}
-              transition={{ duration: 0.55, delay: index * 0.05 }}
-className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/12 bg-white/7 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-yellow-300/30 hover:bg-white/10"            >
-<div className="relative h-64 overflow-hidden rounded-t-3xl">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-70" />
-              <img
-  src={product.image}
-  alt={product.title}
-  className="h-full w-full object-cover"
-/>
-              </div>
+<div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+  {products.map((product, index) => (
+    <motion.article
+      key={product.slug}
+      {...fadeUp}
+      transition={{ duration: 0.55, delay: index * 0.05 }}
+      className="group flex flex-col h-full rounded-3xl border border-white/12 bg-white/7 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-yellow-300/30 hover:bg-white/10"
+    >
+      
+     {/* IMAGE */}
+<div className="relative h-64 sm:h-72 md:h-80 overflow-hidden rounded-t-3xl">
+  
+  {/* BADGE (TOP LEFT 🔥) */}
+<span className="absolute top-3 left-3 z-10 text-xs font-semibold text-yellow-300 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-yellow-400/30">
+  Best for Industrial Use
+</span>
 
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex flex-wrap gap-2">
-{product.tags?.map((tag) => (
-                      <span
-                      key={tag}
-                      className="rounded-full border border-white/12 bg-slate-950/35 px-3 py-1 text-xs text-slate-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-70" />
 
-                <h3 className="mt-4 text-2xl font-semibold text-white">
-                  {product.title}
-                </h3>
+  <img
+    src={product.image}
+    alt={product.title}
+    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+</div>
 
-                <p className="mt-3 flex-1 text-sm leading-7 text-slate-300">
-                  {product.desc}
-                </p>
-
-                <Link
-  href={`/products/${product.slug}`}
-  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-yellow-300 transition duration-300 hover:text-yellow-200"
->
-  View Details
-  <ArrowRight size={16} />
-</Link>
-              </div>
-            </motion.article>
+      {/* CONTENT */}
+      <div className="flex flex-col flex-1 p-6">
+        
+        {/* TAGS (FIXED HEIGHT BLOCK ✅) */}
+        <div className="flex flex-wrap gap-2 h-[60px] content-start overflow-hidden">
+          {product.tags?.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/12 bg-slate-950/35 px-3 py-1 text-xs text-slate-200 whitespace-nowrap"
+            >
+              {tag}
+            </span>
           ))}
         </div>
+        
+
+    {/* TITLE + CTA ROW */}
+<div className="mt-4 flex items-start justify-between gap-3">
+  <h3 className="text-xl sm:text-2xl font-semibold text-white leading-snug line-clamp-2">
+    {product.title}
+          </h3>
+          
+          
+
+  <Link
+    href={`/products/${product.slug}`}
+    className="flex items-center mt-2 gap-1 text-xs sm:text-sm font-semibold text-yellow-300 whitespace-nowrap hover:text-yellow-200 transition"
+  >
+    View Details
+    <ArrowRight size={14} />
+  </Link>
+</div>
       </div>
+    </motion.article>
+  ))}
+        </div>
+        
+     
+      </div>
+      <div className="mt-20">
+  <CTA />
+</div>
     </section>
+    
   );
 }

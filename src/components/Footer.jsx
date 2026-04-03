@@ -57,33 +57,52 @@ export default function Footer() {
             </ul>
           </div>
 
+    
           {/* CONTACT */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">
-              Contact Us
-            </h4>
+<div>
+  <h4 className="text-white font-semibold mb-4">
+    Contact Us
+  </h4>
 
-            <ul className="space-y-3 text-sm">
+  <ul className="space-y-3 text-sm">
 
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="text-accent" />
-                +91 9829080341
-              </li>
+    {/* PHONE */}
+    <li>
+      <a
+        href="tel:+919829080341"
+        className="flex items-center gap-2 hover:text-yellow-300 transition"
+      >
+        <Phone size={16} className="text-accent" />
+        +91 9829080341
+      </a>
+    </li>
 
-              <li className="flex items-center gap-2">
-                <Mail size={16} className="text-accent" />
-                paragindustries140@gmail.com
-              </li>
+    {/* EMAIL */}
+    <li>
+      <a
+        href="mailto:paragindustries140@gmail.com"
+        className="flex items-center gap-2 hover:text-yellow-300 transition"
+      >
+        <Mail size={16} className="text-accent" />
+        paragindustries140@gmail.com
+      </a>
+    </li>
 
-              <li className="flex items-center gap-2">
-                <MapPin size={16} className="text-accent" />
-                Rajasthan, India
-              </li>
+    {/* LOCATION (OPTIONAL GOOGLE MAP LINK) */}
+    <li>
+      <a
+        href="https://www.google.com/maps?q=Rajasthan,India"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-yellow-300 transition"
+      >
+        <MapPin size={16} className="text-accent" />
+        Rajasthan, India
+      </a>
+    </li>
 
-            </ul>
-
-          
-          </div>
+  </ul>
+</div>
 
         </div>
 
@@ -94,7 +113,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Parag Industries. All rights reserved.
           </p>
 
-          <p className="mt-3 md:mt-0">
+          <p className="mt-3 md:mt-0 text-yellow-400">
             Website by{" "}
             <a
               href="https://pashgen.com/"
