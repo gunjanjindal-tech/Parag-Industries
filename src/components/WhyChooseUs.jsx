@@ -45,7 +45,7 @@ const points = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] py-20">
+    <section className="relative bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 

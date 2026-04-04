@@ -421,7 +421,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+         <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"

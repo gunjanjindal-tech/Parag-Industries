@@ -15,7 +15,7 @@ export const products = [
   },
   {
     slug: "chain-link-fence",
-    image: "/images/products/chain-link-fence.jpg", // ✅ FIXED
+    image: "/images/products/chain-link-fence.jpg",
     title: "Chain Link Fence",
     desc: "Versatile and cost-effective fencing option suited for wide boundaries and uneven site conditions.",
     tags: ["Budget Friendly", "Fast Installation", "Large Boundaries"],

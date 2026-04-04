@@ -14,7 +14,7 @@ const stats = [
 
 export default function TrustBar() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0d3b66] via-[#154c79] to-[#0a2540] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0d3b66] via-[#154c79] to-[#0a2540] px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
 
       {/* glow */}
       <div className="absolute w-[300px] h-[300px] bg-accent/20 blur-[100px] rounded-full top-[-80px] left-[-80px]"></div>

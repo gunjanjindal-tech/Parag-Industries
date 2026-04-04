@@ -25,7 +25,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative bg-gradient-to-br from-[#154c79] via-[#1b5f8a] to-[#0d3b66] py-20">
+    <section className="relative bg-gradient-to-br from-[#154c79] via-[#1b5f8a] to-[#0d3b66] px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 

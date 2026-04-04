@@ -44,7 +44,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] py-24">
+    <section className="relative bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
 
       {/* glow */}
       <div className="absolute w-[300px] h-[300px] bg-accent/20 blur-[100px] rounded-full top-[-80px] left-[-80px]"></div>

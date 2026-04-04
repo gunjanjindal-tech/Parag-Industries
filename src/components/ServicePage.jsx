@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { Sun, Building2, Shield, Train, Landmark, Factory, Search, Layout, Settings } from "lucide-react";
+import TrustBar from "./TrustBar";
 
 export default function ServicesPage() {
   return (
     <main className=" bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
 
       {/* HERO */}
-      <section className="py-20 px-6 text-center max-w-7xl mx-auto">
+      <section className="px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14 text-center max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           Fencing Solutions Built for{" "}
           <span className="text-yellow-400">Industrial Scale & Security</span>
@@ -18,110 +19,134 @@ export default function ServicesPage() {
           fencing systems for solar parks, infrastructure, defence and industrial projects.
         </p>
       </section>
+    
+     {/* SERVICE BLOCKS */}
+<section className="space-y-16 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto pb-20">
 
-      {/* SERVICE BLOCKS (PREMIUM STYLE) */}
-      <section className="space-y-16 px-6 max-w-7xl mx-auto pb-24">
+  {/* BLOCK 1 */}
+  <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
-        {/* BLOCK 1 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          
-          <div>
-            <h2 className="text-3xl font-semibold">
-              Perimeter Security Solutions
-            </h2>
+    {/* TEXT */}
+    <div>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+        Perimeter Security Solutions
+      </h2>
 
-            <p className="mt-4 text-slate-400 leading-relaxed">
-              We provide complete perimeter protection systems including chain link,
-              welded mesh, anti-climb fencing and barbed wire designed for industrial
-              and high-security environments.
-            </p>
+      <p className="mt-4 text-slate-400 leading-relaxed">
+        We provide complete perimeter protection systems including chain link,
+        welded mesh, anti-climb fencing and barbed wire designed for industrial
+        and high-security environments.
+      </p>
 
-           <ul className="mt-6 space-y-3 text-sm text-slate-300">
-  {[
-    "Chain Link (GI, SS, PVC)",
-    "Anti-Climb Fence",
-    "Barbed Wire & Concertina",
-  ].map((item) => (
-    <li key={item} className="flex items-start gap-3">
-      <CheckCircle
-        size={18}
-        className="text-yellow-400 mt-[2px] shrink-0"
+      <ul className="mt-6 space-y-3 text-sm text-slate-300">
+        {[
+          "Chain Link (GI, SS, PVC)",
+          "Anti-Climb Fence",
+          "Barbed Wire & Concertina",
+        ].map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <CheckCircle size={18} className="text-yellow-400 mt-[2px] shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* IMAGE */}
+    <div className="relative h-[260px] sm:h-[300px] rounded-2xl overflow-hidden border border-white/10">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+      <img
+        src="/services/PerimeterIntrusionDetection.jpeg"
+        alt="Perimeter Security"
+        className="h-full w-full object-cover transition duration-500 hover:scale-105"
       />
-      <span>{item}</span>
-    </li>
-  ))}
-              
-</ul>
-          </div>
+    </div>
+  </div>
 
-          <div className="h-[300px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"></div>
-        </div>
+  {/* BLOCK 2 */}
+  <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
-        {/* BLOCK 2 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    {/* IMAGE */}
+    <div className="order-2 md:order-1 relative h-[260px] sm:h-[300px] rounded-2xl overflow-hidden border border-white/10">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+      <img
+        src="/services/StructuralFabrication.jpeg"
+        alt="Fabrication Support"
+        className="h-full w-full object-cover transition duration-500 hover:scale-105"
+      />
+    </div>
 
-          <div className="order-2 md:order-1 h-[300px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"></div>
+    {/* TEXT */}
+    <div className="order-1 md:order-2">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+        Structural & Fabrication Support
+      </h2>
 
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl font-semibold">
-              Structural & Fabrication Support
-            </h2>
+      <p className="mt-4 text-slate-400 leading-relaxed">
+        We offer structural fencing materials including angles, GI wires and
+        custom fabricated solutions tailored for infrastructure and large-scale projects.
+      </p>
 
-            <p className="mt-4 text-slate-400 leading-relaxed">
-              We offer structural fencing materials including angles, GI wires and
-              custom fabricated solutions tailored for infrastructure and large-scale projects.
-            </p>
+      <ul className="mt-6 space-y-3 text-sm text-slate-300">
+        {[
+          "GI / MS Angles for strong boundary structures",
+          "Binding & GI Wire for industrial applications",
+          "Custom fabrication tailored to project needs",
+        ].map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <CheckCircle size={18} className="text-yellow-400 mt-[2px] shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
 
-            <ul className="mt-6 space-y-3 text-sm text-slate-300">
-  {[
-    "GI / MS Angles for strong boundary structures",
-    "Binding & GI Wire for industrial applications",
-    "Custom fabrication tailored to project needs",
-  ].map((item) => (
-    <li key={item} className="flex items-start gap-3">
-      <CheckCircle className="text-yellow-400 mt-[2px] shrink-0" size={18} />
-      <span>{item}</span>
-    </li>
-  ))}
-</ul>
-          </div>
+  {/* BLOCK 3 */}
+  <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
-        </div>
+    {/* TEXT */}
+    <div>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+        Infrastructure & Civil Solutions
+      </h2>
 
-        {/* BLOCK 3 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <p className="mt-4 text-slate-400 leading-relaxed">
+        Our gabion boxes and fencing systems are widely used in infrastructure,
+        erosion control and government projects ensuring durability and long-term performance.
+      </p>
 
-          <div>
-            <h2 className="text-3xl font-semibold">
-              Infrastructure & Civil Solutions
-            </h2>
+      <ul className="mt-6 space-y-3 text-sm text-slate-300">
+        {[
+          "Gabion Box systems for erosion control",
+          "Retaining wall and landscape support solutions",
+          "Heavy-duty mesh for infrastructure projects",
+        ].map((item) => (
+          <li key={item} className="flex items-start gap-3">
+            <CheckCircle size={18} className="text-yellow-400 mt-[2px] shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
 
-            <p className="mt-4 text-slate-400 leading-relaxed">
-              Our gabion boxes and fencing systems are widely used in infrastructure,
-              erosion control and government projects ensuring durability and long-term performance.
-            </p>
+    {/* IMAGE */}
+    <div className="relative h-[260px] sm:h-[300px] rounded-2xl overflow-hidden border border-white/10">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+      <img
+        src="/services/InfrastructureSolutions.jpeg"
+        alt="Infrastructure Solutions"
+        className="h-full w-full object-cover transition duration-500 hover:scale-105"
+      />
+    </div>
+  </div>
 
-           <ul className="mt-6 space-y-3 text-sm text-slate-300">
-  {[
-    "Gabion Box systems for erosion control",
-    "Retaining wall and landscape support solutions",
-    "Heavy-duty mesh for infrastructure projects",
-  ].map((item) => (
-    <li key={item} className="flex items-start gap-3">
-      <CheckCircle className="text-yellow-400 mt-[2px] shrink-0" size={18} />
-      <span>{item}</span>
-    </li>
-  ))}
-</ul>
-          </div>
+</section>
 
-          <div className="h-[300px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"></div>
-        </div>
-
-      </section>
+        <TrustBar/>
 
       {/* INDUSTRIES */}
-     <section className="py-16 px-6 text-center">
+     <section className="px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14 text-center">
   <h2 className="text-3xl font-bold mb-4">
     Industries We Serve
   </h2>
@@ -159,14 +184,14 @@ export default function ServicesPage() {
       </section>
       
 {/* Process */}
-<section className="py-24 px-6 max-w-7xl mx-auto">
+<section className="px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-16 max-w-7xl mx-auto">
 
   <div className="text-center mb-16">
     <h2 className="text-3xl font-bold">
       Our Process
     </h2>
 
-    <p className="text-slate-400 mt-4 max-w-xl mx-auto">
+    <p className="text-slate-400 mt-4 max-w-3xl mx-auto">
       We follow a structured approach to ensure every project is delivered with
       precision, efficiency, and long-term reliability.
     </p>

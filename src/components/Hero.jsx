@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden 
 bg-gradient-to-br from-primary via-[#0d3b66] to-[#051923]
-pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
+ sm:pt-12 sm:pb-12 md:pt-12 md:pb-12">
 
       {/* GLOW EFFECT */}
       <div className="absolute w-[500px] h-[500px] bg-accent/20 blur-[120px] rounded-full top-[-100px] left-[-100px]"></div>

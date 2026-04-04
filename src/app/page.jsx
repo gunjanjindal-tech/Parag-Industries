@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
-import Services from "@/components/Services";
-import Projects from "@/components/Projects";
+import HomeProductsSection from "@/components/HomeProductsSection";
+import HomeProjects from "@/components/HomeProjects";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <Services />
-      <Projects />
+     <HomeProductsSection/>
+      <HomeProjects />
       <WhyChooseUs />
       <Testimonials />
       <FAQ/>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,10 +10,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* TOP GRID */}
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 items-start">
 
           {/* COMPANY */}
-          <div>
+         <div className="flex flex-col h-full">
             <h3 className="text-white text-xl font-semibold mb-4">
               Parag Industries
             </h3>
@@ -28,38 +29,74 @@ export default function Footer() {
           </div>
 
           {/* QUICK LINKS */}
-          <div>
+          <div className="flex flex-col h-full md:ml-10 lg:ml-20">
             <h4 className="text-white font-semibold mb-4">
               Quick Links
             </h4>
 
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-accent transition cursor-pointer">Home</li>
-                          <li className="hover:text-accent transition cursor-pointer">Products</li>
-              <li className="hover:text-accent transition cursor-pointer">Services</li>
-                          
-              <li className="hover:text-accent transition cursor-pointer">Projects</li>
-              <li className="hover:text-accent transition cursor-pointer">About</li>
-              <li className="hover:text-accent transition cursor-pointer">Contact</li>
+             <li>
+  <Link href="/" className="hover:text-accent transition">
+    Home
+  </Link>
+</li>
+
+<li>
+  <Link href="/products" className="hover:text-accent transition">
+    Products
+  </Link>
+</li>
+
+<li>
+  <Link href="/services" className="hover:text-accent transition">
+    Services
+  </Link>
+</li>
+
+<li>
+  <Link href="/about" className="hover:text-accent transition">
+    About
+  </Link>
+</li>
+
+<li>
+  <Link href="/contact" className="hover:text-accent transition">
+    Contact
+  </Link>
+</li>
             </ul>
           </div>
 
           {/* LEGAL */}
-          <div>
+      <div className="flex flex-col h-full">
             <h4 className="text-white font-semibold mb-4">
               Legal
             </h4>
 
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-accent transition cursor-pointer">Privacy Policy</li>
-              <li className="hover:text-accent transition cursor-pointer">Terms & Conditions</li>
-              <li className="hover:text-accent transition cursor-pointer">Warranty Policy</li>
+             <li>
+  <Link href="/privacy-policy" className="hover:text-accent transition">
+    Privacy Policy
+  </Link>
+</li>
+
+<li>
+  <Link href="/terms" className="hover:text-accent transition">
+    Terms & Conditions
+  </Link>
+</li>
+
+<li>
+  <Link href="/warranty" className="hover:text-accent transition">
+    Warranty Policy
+  </Link>
+</li>
             </ul>
           </div>
 
     
           {/* CONTACT */}
-<div>
+<div className="flex flex-col h-full">
   <h4 className="text-white font-semibold mb-4">
     Contact Us
   </h4>
@@ -78,15 +115,18 @@ export default function Footer() {
     </li>
 
     {/* EMAIL */}
-    <li>
-      <a
-        href="mailto:paragindustries140@gmail.com"
-        className="flex items-center gap-2 hover:text-yellow-300 transition"
-      >
-        <Mail size={16} className="text-accent" />
-        paragindustries140@gmail.com
-      </a>
-    </li>
+   <li>
+  <a
+    href="mailto:paragindustries140@gmail.com"
+    className="flex items-start gap-2 hover:text-yellow-300 transition"
+  >
+    <Mail size={16} className="text-accent mt-1 shrink-0" />
+
+    <span className="break-all">
+      paragindustries140@gmail.com
+    </span>
+  </a>
+</li>
 
     {/* LOCATION (OPTIONAL GOOGLE MAP LINK) */}
     <li>
@@ -107,8 +147,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>
             © {new Date().getFullYear()} Parag Industries. All rights reserved.
           </p>
