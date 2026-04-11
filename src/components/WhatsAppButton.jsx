@@ -6,9 +6,30 @@ export default function WhatsAppButton() {
       href="https://wa.me/919829080341"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
+      className="fixed bottom-6 right-6 z-50 group"
     >
-      💬
+      <div className="relative">
+
+        {/* SOFT GLOW */}
+        <div className="absolute inset-0 rounded-full bg-[#25D366]/40 blur-2xl opacity-70 group-hover:opacity-100 transition duration-300"></div>
+
+        {/* BUTTON */}
+        <div className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition duration-300">
+
+          {/* ORIGINAL WHATSAPP ICON */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            className="w-7 h-7"
+          >
+            <path
+              fill="white"
+              d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.754 5.607 2.07 7.97L0 32l7.83-2.05a15.94 15.94 0 008.17 2.246c8.836 0 16-7.164 16-16S24.836.396 16 .396zm0 29.196c-2.52 0-4.94-.662-7.06-1.918l-.504-.3-4.65 1.217 1.24-4.54-.328-.523A13.72 13.72 0 012.28 16.4C2.28 8.98 8.58 2.68 16 2.68c7.42 0 13.72 6.3 13.72 13.72 0 7.42-6.3 13.72-13.72 13.72zm7.74-10.27c-.424-.212-2.51-1.238-2.9-1.38-.39-.142-.674-.212-.958.212-.284.424-1.1 1.38-1.35 1.664-.248.284-.496.32-.92.106-.424-.212-1.79-.66-3.41-2.104-1.26-1.124-2.11-2.51-2.36-2.934-.248-.424-.026-.652.186-.864.19-.188.424-.496.636-.744.212-.248.284-.424.424-.708.142-.284.07-.532-.036-.744-.106-.212-.958-2.312-1.312-3.168-.344-.828-.694-.716-.958-.73l-.816-.014c-.284 0-.744.106-1.132.532-.39.424-1.484 1.45-1.484 3.534 0 2.084 1.52 4.1 1.732 4.384.212.284 2.994 4.574 7.26 6.41 1.016.438 1.81.7 2.428.896 1.02.324 1.948.278 2.68.168.818-.122 2.51-1.024 2.864-2.012.354-.988.354-1.836.248-2.012-.106-.176-.39-.284-.816-.496z"
+            />
+          </svg>
+
+        </div>
+      </div>
     </a>
   );
 }
