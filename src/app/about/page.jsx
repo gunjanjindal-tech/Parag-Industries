@@ -102,7 +102,7 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] pt-28 pb-24 sm:pt-32 sm:pb-28">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] py-14 sm:py-16 md:py-18">
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-8 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
         <div className="absolute right-[-10%] top-1/3 h-80 w-80 rounded-full bg-cyan-400/10 blur-[130px]" />
@@ -110,7 +110,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:90px_90px] opacity-[0.14]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-24 px-4 sm:px-6">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 sm:gap-14 md:gap-16  px-4 sm:px-6">
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div
             initial={{ opacity: 0, y: 36 }}
@@ -123,14 +123,14 @@ export default function AboutPage() {
               About Parag Industries
             </div>
 
-            <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
-              We build secure boundaries with
-              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                precision, reliability and long-term trust.
-              </span>
-            </h1>
+           <h1 className="mt-6 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] tracking-tight">
+  We build secure boundaries with
+  <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+    precision, reliability and long-term trust.
+  </span>
+</h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
               Parag Industries delivers industrial fencing systems designed for
               strength, consistency and peace of mind. Over the years, we have
               supported projects that demand dependable protection and equally
@@ -148,21 +148,43 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 shadow-[0_18px_40px_rgba(250,204,21,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
-              >
-                Start Your Project
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:border-yellow-300/50 hover:bg-white/10"
-              >
-                Explore Products
-              </Link>
-            </div>
+           <div className="mt-8 flex flex-wrap gap-4">
+  <Link
+    href="/contact"
+    className="
+      inline-flex items-center gap-2 
+      rounded-2xl 
+      bg-yellow-400 
+      px-6 py-3 
+      font-semibold text-slate-950 
+      shadow-[0_18px_40px_rgba(250,204,21,0.22)]
+      transition duration-300
+      hover:scale-105 hover:-translate-y-1 hover:bg-yellow-300
+    "
+  >
+    Start Your Project
+    <ArrowRight size={18} />
+  </Link>
+
+  <Link
+    href="/products"
+    className="
+      inline-flex items-center gap-2 
+      rounded-2xl 
+      border border-white/20 
+      bg-white/5 
+      px-6 py-3 
+      font-semibold text-white 
+      shadow-lg
+      transition duration-300
+      hover:scale-105 hover:-translate-y-1 
+      hover:border-yellow-300/50 
+      hover:bg-white/10
+    "
+  >
+    Explore Products
+  </Link>
+</div>
           </motion.div>
 
           <motion.div
@@ -203,11 +225,11 @@ export default function AboutPage() {
                   ))}
                 </div>
 
-                <div className="mt-8 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-5">
+                <div className="mt-5 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-5 sm:p-6 md:p-7">
                   <div className="flex items-start gap-3">
                     <BadgeCheck className="mt-1 text-yellow-300" size={20} />
                     <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-yellow-200">
+                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-yellow-300">
                         Quality Promise
                       </p>
                       <p className="mt-2 text-sm leading-7 text-slate-100">
@@ -250,11 +272,11 @@ export default function AboutPage() {
           })}
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
+        <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.65 }}
-            className="flex h-full flex-col rounded-[2rem] border border-white/12 bg-white/7 p-7 backdrop-blur-xl sm:p-8"
+            className="flex h-full flex-col rounded-[2rem] border border-white/12 bg-white/7 p-7 backdrop-blur-xlp-5 sm:p-6 md:p-7"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">
               Our Story
@@ -321,8 +343,8 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <motion.div
+<div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[1fr_1fr]">
+            <motion.div
             {...fadeUp}
             transition={{ duration: 0.65 }}
             className="rounded-[2rem] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] p-8 backdrop-blur-xl"
@@ -400,12 +422,12 @@ export default function AboutPage() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-10 backdrop-blur-2xl sm:px-10"
+          className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-6 sm:py-8 md:py-10 backdrop-blur-2xl sm:px-10"
         >
           <div className="absolute -right-12 top-0 h-44 w-44 rounded-full bg-yellow-400/20 blur-[90px]" />
           <div className="absolute bottom-0 left-0 h-36 w-36 rounded-full bg-cyan-400/10 blur-[80px]" />
 
-          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative flex flex-col  lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">
                 Let&apos;s Build Together
@@ -428,12 +450,6 @@ export default function AboutPage() {
               >
                 Contact Our Team
                 <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-white/10"
-              >
-                View Homepage
               </Link>
             </div>
           </div>

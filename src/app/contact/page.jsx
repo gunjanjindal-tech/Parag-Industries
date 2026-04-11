@@ -47,22 +47,22 @@ export default function ContactPage() {
   return (
     <section className="relative overflow-hidden 
     bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923]
-    pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
+    pt-12 pb-12 sm:pt-14 sm:pb-14 md:pt-16 md:pb-16">
 
       {/* GLOW */}
       <div className="absolute w-[500px] h-[500px] bg-yellow-400/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
       <div className="absolute w-[400px] h-[400px] bg-blue-500/20 blur-[100px] rounded-full bottom-[-100px] right-[-100px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
         {/* HEADER */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12 md:mb-14">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
             <p className="text-sm tracking-widest text-gray-300 font-medium mb-4">
               CONTACT US
             </p>
 
-            <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.2] tracking-tight">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] tracking-tight">
               <span className="block sm:inline">Let’s Build Your</span>{" "}
               <span className="text-yellow-400 block sm:inline">
                 Next Project
@@ -77,13 +77,13 @@ export default function ContactPage() {
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-stretch">
 
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col h-full"
+            className="  p-5 sm:p-6 md:p-7 shadow-xl flex flex-col h-full"
           >
             <h2 className="text-white text-xl sm:text-2xl font-semibold mb-3">
               Contact Information
@@ -115,17 +115,23 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <a href="#" className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5">
-                <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <p className="text-white font-medium">Address</p>
-                  <p className="text-gray-300 text-sm">
-                    G-1-30, Road No. 2A, RIICO Industrial Area, Jaipur
-                  </p>
-                </div>
-              </a>
+             <a
+  href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x396db25a456c8bf7:0x43f9532f48346f30?entry=s&sa=X&ved=2ahUKEwil6oOp0LWTAxWt96ACHbprEWUQ4kB6BAgEEAA&hl=en"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5"
+>
+  <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black">
+    <MapPin size={18} />
+  </div>
+
+  <div>
+    <p className="text-white font-medium">Address</p>
+    <p className="text-gray-300 text-sm">
+      G-1-30, Road No. 2A, RIICO Industrial Area, Jaipur
+    </p>
+  </div>
+</a>
 
             </div>
           </motion.div>
@@ -142,18 +148,18 @@ export default function ContactPage() {
 
             <form ref={formRef} onSubmit={sendEmail} className="space-y-4 flex flex-col">
 
-              <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
+              <input type="text" name="name" placeholder="Full Name" required className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              <input type="email" name="email" placeholder="Email Address" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
+              <input type="email" name="email" placeholder="Email Address" required className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              <input type="text" name="phone" placeholder="Phone Number" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
+              <input type="text" name="phone" placeholder="Phone Number" className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white" />
 
-              <textarea name="message" rows="4" placeholder="Tell us about your project..." required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" />
+              <textarea name="message" rows="4" placeholder="Tell us about your project..." required className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white" />
 
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full bg-yellow-400  text-black py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
+                className="w-full bg-yellow-400  text-black py-2.5 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
               >
                 Send Message
               </button>

@@ -14,9 +14,25 @@ export default function Footer() {
 
           {/* COMPANY */}
          <div className="flex flex-col h-full">
-            <h3 className="text-white text-xl font-semibold mb-4">
-              Parag Industries
-            </h3>
+           <div className="flex flex-col leading-tight mb-4">
+
+  {/* TOP ROW */}
+  <div className="flex items-center gap-2">
+    <h3 className="text-white font-bold text-lg tracking-wide">
+      PARAG <span className="font-bold">INDUSTRIES</span>
+    </h3>
+
+    <span className="text-[10px] px-2 py-[2px] rounded bg-blue-400/30 border border-white/20 text-white/80">
+      सुरक्षा
+    </span>
+  </div>
+
+  {/* TAGLINE */}
+  <span className="text-[10px] text-white/60 tracking-widest mt-1">
+    COMMITTED TO QUALITY SINCE 1996
+  </span>
+
+</div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
               Delivering premium fencing solutions for industrial,
@@ -81,7 +97,7 @@ export default function Footer() {
 </li>
 
 <li>
-  <Link href="/terms" className="hover:text-accent transition">
+  <Link href="/terms-and-conditions" className="hover:text-accent transition">
     Terms & Conditions
   </Link>
 </li>
@@ -131,7 +147,7 @@ export default function Footer() {
     {/* LOCATION (OPTIONAL GOOGLE MAP LINK) */}
     <li>
       <a
-        href="https://www.google.com/maps?q=Rajasthan,India"
+        href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x396db25a456c8bf7:0x43f9532f48346f30?entry=s&sa=X&ved=2ahUKEwil6oOp0LWTAxWt96ACHbprEWUQ4kB6BAgEEAA&hl=en"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 hover:text-yellow-300 transition"
