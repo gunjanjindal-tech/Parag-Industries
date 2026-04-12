@@ -8,26 +8,41 @@ import {
   CircleGauge,
   ShieldCheck,
   Sparkles,
+  Zap,
+  Layers,
+  Settings,
+  Award,
+  ChevronRight,
+  Phone,
 } from "lucide-react";
 
-const cardBase =
-  "rounded-[1.6rem] border border-white/[0.12] bg-white/[0.07] p-6 backdrop-blur-xl";
+const statItems = [
+  { label: "Security Grade", value: "Industrial", icon: ShieldCheck },
+  { label: "Service Life", value: "25+ Years", icon: Award },
+  { label: "Performance", value: "High Load", icon: CircleGauge },
+  { label: "Standards", value: "ISO Certified", icon: Zap },
+];
 
-const sectionMap = [
+const overviewCards = [
   {
-    title: "Key Features",
-    key: "features",
-    iconClass: "text-yellow-300",
+    icon: Layers,
+    title: "Durability",
+    desc: "Built to withstand extreme environmental conditions, UV exposure, and mechanical stress over decades.",
   },
   {
-    title: "Project Benefits",
-    key: "benefits",
-    iconClass: "text-emerald-300",
+    icon: ShieldCheck,
+    title: "Strength",
+    desc: "High-tensile materials engineered for maximum load-bearing capacity and structural integrity.",
   },
   {
-    title: "Best-Fit Applications",
-    key: "applications",
-    iconClass: "text-cyan-300",
+    icon: Settings,
+    title: "Low Maintenance",
+    desc: "Corrosion-resistant coatings and precision engineering drastically reduce upkeep requirements.",
+  },
+  {
+    icon: Award,
+    title: "Versatility",
+    desc: "Adaptable across industrial, commercial, agricultural, and residential project environments.",
   },
 ];
 
@@ -40,181 +55,359 @@ export default async function ProductDetail({ params }) {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] px-4  text-white sm:px-6 pt-12 sm:pt-14 md:pt-16 pb-14 sm:pb-16 md:pb-18">
-      <div className="absolute inset-0">
+    <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
+      {/* ── Global ambient blobs ── */}
+      <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute left-[-9%] top-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
         <div className="absolute right-[-12%] top-1/3 h-80 w-80 rounded-full bg-cyan-400/10 blur-[125px]" />
         <div className="absolute bottom-0 left-1/2 h-64 w-[34rem] -translate-x-1/2 rounded-full bg-white/5 blur-[140px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:88px_88px] opacity-[0.12]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:88px_88px] opacity-[0.35]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-200">
-          <Link
-            href="/products"
-            className="rounded-full border border-white/[0.15] bg-white/5 px-4 py-1.5 transition hover:border-yellow-300/40 hover:text-white"
-          >
-            Products
-          </Link>
-          <span className="text-white/40">—</span>
-          <span className="rounded-full border border-yellow-300/35 bg-yellow-300/[0.12] px-4 py-1.5 text-yellow-200">
-            {product.title}
-          </span>
-        </div>
+      {/* ════════════════════════════════════════
+          SECTION 1 — HERO
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 px-4 sm:px-6 pt-10 sm:pt-14 md:pt-16 pb-0">
+        <div className="mx-auto max-w-7xl">
+          {/* Breadcrumb */}
+          <div className="mb-8 flex flex-wrap items-center gap-2 text-sm text-slate-300">
+            <Link
+              href="/products"
+              className="flex items-center gap-1.5 rounded-full border border-white/[0.14] bg-white/[0.06] px-4 py-1.5 transition hover:border-yellow-300/40 hover:text-white"
+            >
+              Products
+            </Link>
+            <ChevronRight size={14} className="text-white/30" />
+            <span className="rounded-full border border-yellow-300/30 bg-yellow-300/[0.10] px-4 py-1.5 text-yellow-200">
+              {product.title}
+            </span>
+          </div>
 
-        <div className="grid gap-5 lg:grid-cols-[1.06fr_0.94fr] lg:items-start">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.15] bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
-              <Sparkles size={14} />
-              Product Detail
-            </div>
+          {/* Hero grid */}
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Left — copy */}
+            <div className="space-y-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
+                <Sparkles size={13} />
+                Product Detail
+              </div>
 
-            <div>
-              <h1 className=" leading-tight text-3xl sm:text-4xl md:text-5xl font-bold">
+              <h1 className="text-4xl font-extrabold leading-[1.12] sm:text-5xl md:text-6xl">
                 {product.title}
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-gray-300 sm:text-lg">
+
+              <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
                 {product.desc}
               </p>
-            </div>
 
-            <div className="flex flex-wrap gap-3">
-              {(product.tags || []).map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/[0.15] bg-white/[0.06] px-4 py-2 text-sm text-slate-100"
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2.5">
+                {(product.tags || []).map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/[0.13] bg-white/[0.06] px-4 py-1.5 text-sm text-slate-200"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-7 py-3.5 font-semibold text-slate-950 shadow-[0_16px_40px_rgba(250,204,21,0.26)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
                 >
-                  {tag}
-                </span>
-              ))}
+                  Get a Quote
+                  <ArrowRight size={17} />
+                </Link>
+                <Link
+                  href="https://wa.me/919829080341?text=Hi%20I%20am%20interested%20in%20your%20fencing%20products."
+                  target="_blank"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-7 py-3.5 font-semibold text-white transition duration-300 hover:border-yellow-300/40 hover:bg-white/10"
+                >
+                  <Phone size={16} />
+                  Talk to Expert
+                </Link>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 shadow-[0_16px_36px_rgba(250,204,21,0.24)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
-              >
-                Get Quote
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:border-yellow-300/40 hover:bg-white/10"
-              >
-                Explore More Products
-              </Link>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/[0.15] bg-white/[0.08] p-5 shadow-[0_28px_80px_rgba(3,7,18,0.5)] backdrop-blur-2xl">
-            <div className="relative h-[270px] overflow-hidden rounded-[1.45rem] border border-white/[0.12] sm:h-[340px]">
-              <Image
-                src={product.image}
-                alt={product.title}
-                fill
-                sizes="(max-width: 640px) 100vw, 40vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                <p className="text-xs uppercase tracking-[0.24em] text-slate-300">
-                  Security Grade
-                </p>
-                <div className="mt-3 flex items-center gap-2 text-yellow-300">
-                  <ShieldCheck size={18} />
-                  <p className="text-sm font-semibold">Industrial Ready</p>
+            {/* Right — image card */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-[2.2rem] border border-white/[0.13] bg-white/[0.06] p-3 shadow-[0_40px_100px_rgba(3,7,18,0.55)] backdrop-blur-xl">
+                <div className="relative h-[320px] overflow-hidden rounded-[1.7rem] sm:h-[400px]">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  {/* Image overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 </div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
-                <p className="text-xs uppercase tracking-[0.24em] text-slate-300">
-                  Performance
-                </p>
-                <div className="mt-3 flex items-center gap-2 text-yellow-300">
-                  <CircleGauge size={18} />
-                  <p className="text-sm font-semibold">Long Service Life</p>
+
+              {/* Floating badges — inside image so they never overflow on mobile */}
+              <div className="absolute bottom-6 left-3 right-3 flex gap-2">
+                <div className="flex flex-1 items-center gap-2 rounded-xl border border-white/[0.14] bg-slate-900/85 px-3 py-2.5 backdrop-blur-xl shadow-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
+                  <ShieldCheck size={18} className="text-yellow-300 shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
+                      Security Grade
+                    </p>
+                    <p className="truncate text-xs font-semibold text-white sm:text-sm">
+                      Industrial Ready
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-1 items-center gap-2 rounded-xl border border-white/[0.14] bg-slate-900/85 px-3 py-2.5 backdrop-blur-xl shadow-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
+                  <CircleGauge size={18} className="text-yellow-300 shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
+                      Performance
+                    </p>
+                    <p className="truncate text-xs font-semibold text-white sm:text-sm">
+                      Long Service Life
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-         {/* 🔥 PREMIUM NEW SECTION */}
-        <div className="rounded-[2rem] border border-white/[0.12] bg-white/[0.05] p-8 backdrop-blur-xl">
-          <div className="grid lg:grid-cols-2 gap-10">
+      {/* ════════════════════════════════════════
+          SECTION 2 — STATS BAR
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 mt-10 px-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[2rem] border border-white/[0.10] bg-white/[0.06] backdrop-blur-xl lg:grid-cols-4">
+            {statItems.map(({ label, value, icon: Icon }, i) => (
+              <div
+                key={label}
+                className={`flex flex-col items-center gap-2 px-3 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 ${
+                  // On mobile (2-col): right border on cols 0 only per row; on desktop (4-col): all except last
+                  i % 2 === 0 ? "border-r border-white/[0.08]" : ""
+                } lg:border-r lg:last:border-r-0`}
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-300/25 bg-yellow-300/[0.10] sm:h-12 sm:w-12 sm:rounded-2xl">
+                  <Icon size={18} className="text-yellow-300 sm:size-[22px]" />
+                </div>
+                <p className="text-lg font-bold text-white sm:text-2xl">
+                  {value}
+                </p>
+                <p className="text-[10px] uppercase tracking-widest text-slate-400 sm:text-xs">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* ════════════════════════════════════════
+          SECTION 3 — OVERVIEW + OVERVIEW CARDS
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 mt-24 px-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          {/* Section header */}
+          <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold">
-                Detailed Product Overview
-              </h3>
-
-              <p className="mt-4 text-lg leading-8 text-slate-200">
-                {product.title} is engineered for durability, strength, and long-term performance across industrial and commercial environments.
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
+                Product Overview
               </p>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+                Engineered for <br className="hidden sm:block" />
+                <span className="text-yellow-300">Lasting Performance</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-base leading-8 text-slate-300 lg:text-right">
+              {product.title} is built with precision manufacturing and
+              industrial-grade materials to deliver reliable results across
+              demanding environments.
+            </p>
+          </div>
 
-              <p className="mt-4 text-lg leading-8 text-slate-200">
-                Designed with high-quality materials and advanced manufacturing techniques, it ensures reliable performance, corrosion resistance, and low maintenance.
+          {/* 4 overview cards — horizontal layout */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {overviewCards.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="group relative overflow-hidden rounded-[1.6rem] border border-white/[0.10] bg-white/[0.05] p-6 transition duration-300 hover:border-yellow-300/25 hover:bg-white/[0.08]"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/[0.12] bg-slate-950/50">
+                  <Icon size={22} className="text-yellow-300" />
+                </div>
+                <h3 className="mb-2.5 text-lg font-semibold text-white">
+                  {title}
+                </h3>
+                <p className="text-sm leading-7 text-slate-400">{desc}</p>
+                {/* Hover glow */}
+                <div className="absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-yellow-300/[0.06] blur-2xl opacity-0 transition duration-300 group-hover:opacity-100" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          SECTION 4 — FEATURES (Full Width List)
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 mt-24 px-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-start">
+            {/* Left label */}
+            <div className="lg:sticky lg:top-24">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
+                What's Inside
               </p>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+                Key Features
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-400">
+                Every feature is carefully engineered to meet demanding
+                industrial and commercial requirements.
+              </p>
+              <div className="mt-8 h-px w-16 bg-yellow-300/40" />
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {["Durability","Strength","Low Maintenance","Versatility"].map((title) => (
-                <div key={title} className="bg-slate-950/40 p-5 rounded-2xl border border-white/10">
-                  <h4 className="text-yellow-300 font-semibold mb-2">{title}</h4>
-                  <p className="text-sm text-slate-300">
-                    High-performance design ensures reliability and long service life.
-                  </p>
+            {/* Right list */}
+            <div className="space-y-3">
+              {(product.features || []).map((item, i) => (
+                <div
+                  key={item}
+                  className="group flex items-start gap-5 rounded-2xl border border-white/[0.08] bg-white/[0.04] px-6 py-5 transition duration-200 hover:border-yellow-300/20 hover:bg-white/[0.07]"
+                >
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-yellow-300/30 bg-yellow-300/[0.10] text-xs font-bold text-yellow-300">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-sm leading-7 text-slate-200">{item}</p>
+                  <CheckCircle2
+                    size={16}
+                    className="ml-auto mt-1 shrink-0 text-yellow-300/50 opacity-0 transition group-hover:opacity-100"
+                  />
                 </div>
               ))}
             </div>
-
           </div>
         </div>
+      </section>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {sectionMap.map((section) => (
-            <div key={section.key} className={cardBase}>
-              <h2 className="text-2xl font-semibold text-white">{section.title}</h2>
-              <div className="mt-5 space-y-4">
-                {(product[section.key] || []).map((item) => (
+      {/* ════════════════════════════════════════
+          SECTION 5 — BENEFITS + APPLICATIONS (2-col)
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 mt-24 px-4 sm:px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-2">
+
+            {/* Benefits */}
+            <div className="rounded-[2rem] border border-white/[0.10] bg-white/[0.04] p-8 backdrop-blur-xl">
+              <div className="mb-8 flex items-center justify-between">
+                <div>
+                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
+                    Why Choose This
+                  </p>
+                  <h2 className="text-2xl font-bold sm:text-3xl">
+                    Project Benefits
+                  </h2>
+                </div>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.10]">
+                  <Award size={22} className="text-emerald-300" />
+                </div>
+              </div>
+              <div className="space-y-3">
+                {(product.benefits || []).map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/[0.28] px-4 py-3"
+                    className="flex items-start gap-4 rounded-xl border border-white/[0.07] bg-slate-950/30 px-5 py-4"
                   >
                     <CheckCircle2
-                      size={18}
-className="mt-1 shrink-0 text-yellow-300"                    />
+                      size={17}
+                      className="mt-0.5 shrink-0 text-emerald-300"
+                    />
                     <p className="text-sm leading-7 text-slate-200">{item}</p>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
 
-
-        <div className="rounded-[2rem] border border-yellow-300/20 bg-[linear-gradient(140deg,rgba(250,204,21,0.18),rgba(255,255,255,0.04))] p-8 backdrop-blur-xl">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-200">
-                Need Site-Specific Recommendation?
-              </p>
-              <h3 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Share your project requirement and get the right fencing
-                solution with clear specs and fast support.
-              </h3>
+            {/* Applications */}
+            <div className="rounded-[2rem] border border-white/[0.10] bg-white/[0.04] p-8 backdrop-blur-xl">
+              <div className="mb-8 flex items-center justify-between">
+                <div>
+                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                    Where It Fits
+                  </p>
+                  <h2 className="text-2xl font-bold sm:text-3xl">
+                    Best-Fit Applications
+                  </h2>
+                </div>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/[0.10]">
+                  <Layers size={22} className="text-cyan-300" />
+                </div>
+              </div>
+              <div className="space-y-3">
+                {(product.applications || []).map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-4 rounded-xl border border-white/[0.07] bg-slate-950/30 px-5 py-4"
+                  >
+                    <CheckCircle2
+                      size={17}
+                      className="mt-0.5 shrink-0 text-cyan-300"
+                    />
+                    <p className="text-sm leading-7 text-slate-200">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <Link
-  href="https://wa.me/919829080341?text=Hi%20I%20am%20interested%20in%20your%20fencing%20products.%20Please%20share%20more%20details."
-  target="_blank"
-  className="inline-flex w-fit items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
->
-  Talk To Expert
-  <ArrowRight size={18} />
-</Link>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ════════════════════════════════════════
+          SECTION 6 — CTA BANNER
+      ════════════════════════════════════════ */}
+      <section className="relative z-10 mt-20 px-4 pb-20 sm:px-6 sm:pb-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-yellow-300/20 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(13,59,102,0.60))] p-10 backdrop-blur-xl sm:p-14">
+            {/* Decorative blobs inside CTA */}
+            <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-yellow-300/[0.10] blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-cyan-400/[0.08] blur-3xl" />
+
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-yellow-300">
+                  Need Site-Specific Recommendation?
+                </p>
+                <h3 className="text-2xl font-bold leading-snug text-white sm:text-3xl md:text-4xl">
+                  Share your project requirement and get the right fencing
+                  solution with clear specs and fast support.
+                </h3>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <Link
+                  href="https://wa.me/919829080341?text=Hi%20I%20am%20interested%20in%20your%20fencing%20products.%20Please%20share%20more%20details."
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-yellow-400 px-7 py-3.5 font-semibold text-slate-950 shadow-[0_16px_40px_rgba(250,204,21,0.26)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300 whitespace-nowrap"
+                >
+                  Talk To Expert
+                  <ArrowRight size={17} />
+                </Link>
+                <Link
+                  href="/products"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/[0.08] px-7 py-3.5 font-semibold text-white transition duration-300 hover:border-yellow-300/40 hover:bg-white/10 whitespace-nowrap"
+                >
+                  Explore More Products
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

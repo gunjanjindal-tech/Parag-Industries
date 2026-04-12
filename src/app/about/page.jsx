@@ -102,15 +102,20 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] py-14 sm:py-16 md:py-18">
+    <section className="relative overflow-hidden bg-[radial-gradient(_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] py-14 sm:py-16 md:py-18">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute left-[-8%] top-8 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
+       
         <div className="absolute right-[-10%] top-1/3 h-80 w-80 rounded-full bg-cyan-400/10 blur-[130px]" />
         <div className="absolute bottom-0 left-1/2 h-64 w-[32rem] -translate-x-1/2 rounded-full bg-white/5 blur-[140px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:90px_90px] opacity-[0.14]" />
+        
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 sm:gap-14 md:gap-16  px-4 sm:px-6">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 sm:gap-14 md:gap-16 px-4 sm:px-6">
+
+        {/* ══════════════════════════════════
+            SECTION 1 — HERO
+        ══════════════════════════════════ */}
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div
             initial={{ opacity: 0, y: 36 }}
@@ -123,12 +128,12 @@ export default function AboutPage() {
               About Parag Industries
             </div>
 
-           <h1 className="mt-6 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] tracking-tight">
-  We build secure boundaries with
-  <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
-    precision, reliability and long-term trust.
-  </span>
-</h1>
+            <h1 className="mt-6 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] tracking-tight">
+              We build secure boundaries with
+              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                precision, reliability and long-term trust.
+              </span>
+            </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
               Parag Industries delivers industrial fencing systems designed for
@@ -137,107 +142,73 @@ export default function AboutPage() {
               dependable execution.
             </p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              {highlights.map((item) => (
+            {/* Highlights — horizontal pill row */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {highlights.map((item, i) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 text-sm leading-6 text-slate-200 backdrop-blur-xl"
+                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 text-sm leading-6 text-slate-200 backdrop-blur-xl sm:flex-1"
                 >
+                  <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-yellow-300" />
                   {item}
                 </div>
               ))}
             </div>
 
-           <div className="mt-8 flex flex-wrap gap-4">
-  <Link
-    href="/contact"
-    className="
-      inline-flex items-center gap-2 
-      rounded-2xl 
-      bg-yellow-400 
-      px-6 py-3 
-      font-semibold text-slate-950 
-      shadow-[0_18px_40px_rgba(250,204,21,0.22)]
-      transition duration-300
-      hover:scale-105 hover:-translate-y-1 hover:bg-yellow-300
-    "
-  >
-    Start Your Project
-    <ArrowRight size={18} />
-  </Link>
-
-  <Link
-    href="/products"
-    className="
-      inline-flex items-center gap-2 
-      rounded-2xl 
-      border border-white/20 
-      bg-white/5 
-      px-6 py-3 
-      font-semibold text-white 
-      shadow-lg
-      transition duration-300
-      hover:scale-105 hover:-translate-y-1 
-      hover:border-yellow-300/50 
-      hover:bg-white/10
-    "
-  >
-    Explore Products
-  </Link>
-</div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 shadow-[0_18px_40px_rgba(250,204,21,0.22)] transition duration-300 hover:scale-105 hover:-translate-y-1 hover:bg-yellow-300"
+              >
+                Start Your Project
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:-translate-y-1 hover:border-yellow-300/50 hover:bg-white/10"
+              >
+                Explore Products
+              </Link>
+            </div>
           </motion.div>
 
+          {/* Right — stats card */}
           <motion.div
             initial={{ opacity: 0, x: 42 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, delay: 0.1 }}
-            className="relative"
           >
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/8 p-6 shadow-[0_28px_80px_rgba(3,7,18,0.45)] backdrop-blur-2xl">
-              <div className="rounded-[1.5rem] border border-white/10 bg-[linear-gradient(160deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] p-6">
-                <div className="flex items-center justify-between gap-4">
+            <div className="overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.08] shadow-[0_28px_80px_rgba(3,7,18,0.45)] backdrop-blur-2xl">
+              {/* Card header */}
+              <div className="flex items-center justify-between gap-4 border-b border-white/[0.08] px-6 py-5">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Manufacturing Strength</p>
+                  <h2 className="mt-1 text-lg font-semibold text-white">Built for demanding project environments</h2>
+                </div>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-yellow-400 text-slate-950">
+                  <Building2 size={24} />
+                </div>
+              </div>
+
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 gap-px bg-white/[0.06]">
+                {stats.map((item) => (
+                  <div key={item.label} className="bg-slate-950/40 px-5 py-5">
+                    <p className="text-3xl font-bold text-yellow-300">{item.value}</p>
+                    <p className="mt-1.5 text-xs leading-5 text-slate-400">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Quality promise */}
+              <div className="px-6 py-5">
+                <div className="flex items-start gap-3 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-5">
+                  <BadgeCheck className="mt-0.5 shrink-0 text-yellow-300" size={20} />
                   <div>
-                    <p className="text-sm uppercase tracking-[0.28em] text-slate-300">
-                      Manufacturing Strength
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-yellow-300">Quality Promise</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-100">
+                      We combine durable materials, disciplined production and practical project understanding to create fencing solutions that hold up where it matters most.
                     </p>
-                    <h2 className="mt-2 text-2xl font-semibold text-white">
-                      Built for demanding project environments
-                    </h2>
-                  </div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-400 text-slate-950">
-                    <Building2 size={28} />
-                  </div>
-                </div>
-
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {stats.map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-2xl border border-white/10 bg-slate-950/30 p-5"
-                    >
-                      <p className="text-3xl font-bold text-yellow-300">
-                        {item.value}
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-slate-300">
-                        {item.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-5 sm:p-6 md:p-7">
-                  <div className="flex items-start gap-3">
-                    <BadgeCheck className="mt-1 text-yellow-300" size={20} />
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-yellow-300">
-                        Quality Promise
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-slate-100">
-                        We combine durable materials, disciplined production and
-                        practical project understanding to create fencing
-                        solutions that hold up where it matters most.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -245,69 +216,77 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.65 }}
-          className="grid gap-6 md:grid-cols-3"
-        >
-          {pillars.map((item, index) => {
-            const Icon = item.icon;
+        {/* ══════════════════════════════════
+            SECTION 2 — PILLARS (numbered horizontal)
+        ══════════════════════════════════ */}
+        <motion.div {...fadeUp} transition={{ duration: 0.65 }}>
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-yellow-300">What Drives Us</p>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Our Three Core Pillars</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-7 text-slate-400 sm:text-right">
+              Principles that guide every product we build and every project we support.
+            </p>
+          </div>
 
-            return (
-              <div
-                key={item.title}
-                className="group rounded-[1.75rem] border border-white/12 bg-white/7 p-7 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-yellow-300/30 hover:bg-white/10"
-              >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-300 to-yellow-500 text-slate-950 shadow-[0_14px_30px_rgba(250,204,21,0.22)]">
-                  <Icon size={26} />
+          <div className="grid gap-5 md:grid-cols-3">
+            {pillars.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.12] bg-white/[0.07] p-7 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-yellow-300/30 hover:bg-white/10"
+                >
+                  {/* Large background number */}
+                  <p className="absolute right-5 top-3 text-7xl font-black text-white/[0.04] select-none">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <div className="relative">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-300 to-yellow-500 text-slate-950 shadow-[0_14px_30px_rgba(250,204,21,0.22)]">
+                      <Icon size={26} />
+                    </div>
+                    <div className="mt-2 h-px w-10 bg-yellow-300/30" />
+                    <h3 className="mt-4 text-xl font-semibold text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">{item.desc}</p>
+                  </div>
                 </div>
-                <h3 className="mt-3 text-2xl font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-300">
-                  {item.desc}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </motion.div>
 
+        {/* ══════════════════════════════════
+            SECTION 3 — STORY + TIMELINE
+        ══════════════════════════════════ */}
         <div className="grid gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.65 }}
-            className="flex h-full flex-col rounded-[2rem] border border-white/12 bg-white/7 p-7 backdrop-blur-xlp-5 sm:p-6 md:p-7"
+            className="flex h-full flex-col rounded-[2rem] border border-white/[0.12] bg-white/[0.07] p-7 backdrop-blur-xl sm:p-8"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">
-              Our Story
-            </p>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">Our Story</p>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-              From dependable beginnings to a name clients can confidently build
-              with.
+              From dependable beginnings to a name clients can confidently build with.
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              Our journey has always been grounded in doing the basics
-              exceptionally well: durable products, honest commitments, and
-              steady execution. That mindset continues to guide how we work
-              today.
+              Our journey has always been grounded in doing the basics exceptionally well: durable products, honest commitments, and steady execution. That mindset continues to guide how we work today.
             </p>
 
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-3">
               {trustPoints.map((point) => (
                 <div
                   key={point}
-                  className="flex items-start gap-3 rounded-2xl border border-white/8 bg-slate-950/25 px-4 py-4"
+                  className="flex items-start gap-3 rounded-2xl border border-white/[0.08] bg-slate-950/25 px-4 py-4"
                 >
-                  <CheckCircle2
-                    size={20}
-                    className="mt-0.5 shrink-0 text-yellow-300"
-                  />
+                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-yellow-300" />
                   <p className="text-sm leading-7 text-slate-200">{point}</p>
                 </div>
               ))}
             </div>
           </motion.div>
 
+          {/* Timeline */}
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.72, delay: 0.08 }}
@@ -318,132 +297,130 @@ export default function AboutPage() {
               {timeline.map((item, index) => (
                 <div
                   key={item.year}
-                  className="relative rounded-[1.75rem] border border-white/12 bg-white/7 p-6 pl-16 backdrop-blur-xl transition duration-300 hover:border-yellow-300/30 hover:bg-white/10"
+                  className="relative rounded-[1.75rem] border border-white/[0.12] bg-white/[0.07] p-6 pl-16 backdrop-blur-xl transition duration-300 hover:border-yellow-300/30 hover:bg-white/10"
                 >
                   <div className="absolute left-[14px] top-7 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 shadow-[0_0_0_6px_rgba(250,204,21,0.14)]">
                     <div className="h-2 w-2 rounded-full bg-slate-950" />
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300">
-                      {item.year}
-                    </p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300">{item.year}</p>
                     <span className="rounded-full border border-white/10 bg-slate-950/35 px-3 py-1 text-xs text-slate-300">
                       Milestone {index + 1}
                     </span>
                   </div>
-                  <h3 className="mt-3 text-xl font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">
-                    {item.desc}
-                  </p>
+                  <h3 className="mt-3 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">{item.desc}</p>
                 </div>
               ))}
             </div>
           </motion.div>
         </div>
 
-<div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[1fr_1fr]">
-            <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.65 }}
-            className="rounded-[2rem] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] p-8 backdrop-blur-xl"
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">
-              How We Work
-            </p>
-            <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
+        {/* ══════════════════════════════════
+            SECTION 4 — PROCESS (horizontal steps)
+        ══════════════════════════════════ */}
+        <motion.div {...fadeUp} transition={{ duration: 0.65 }}>
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-yellow-300">How We Work</p>
+            <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
               A practical process shaped around quality and accountability.
             </h2>
+          </div>
 
-            <div className="mt-8 space-y-5">
-              {process.map((item) => (
-                <div
-                  key={item.step}
-                  className="rounded-[1.5rem] border border-white/10 bg-slate-950/30 p-5"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-400 font-bold text-slate-950">
-                      {item.step}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-slate-300">
-                    {item.desc}
-                  </p>
+          <div className="grid gap-px overflow-hidden rounded-[2rem] border border-white/[0.10] bg-white/[0.06] sm:grid-cols-3">
+            {process.map((item, i) => (
+              <div
+                key={item.step}
+                className="relative bg-slate-950/40 p-7 transition duration-300 hover:bg-slate-950/60"
+              >
+                {/* Connector dot */}
+                {i < process.length - 1 && (
+                  <div className="absolute -right-2 top-1/2 z-10 hidden h-4 w-4 -translate-y-1/2 rounded-full border-2 border-yellow-400/40 bg-yellow-400/20 sm:block" />
+                )}
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-400 text-base font-bold text-slate-950">
+                  {item.step}
                 </div>
-              ))}
-            </div>
-          </motion.div>
+                <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.72, delay: 0.08 }}
-            className="flex flex-col rounded-[2rem] border border-yellow-400/20 bg-yellow-400/10 p-8 backdrop-blur-xl"
-          >
-            <div>
+        {/* ══════════════════════════════════
+            SECTION 5 — VISION
+        ══════════════════════════════════ */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.72, delay: 0.08 }}
+          className="overflow-hidden rounded-[2rem] border border-yellow-400/20 bg-yellow-400/10 backdrop-blur-xl"
+        >
+          <div className="grid lg:grid-cols-[1fr_1px_1fr]">
+            {/* Left — Vision text */}
+            <div className="p-8 sm:p-10">
               <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white/10 text-yellow-300">
                 <Target size={30} />
               </div>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.32em] text-yellow-200">
-                Our Vision
-              </p>
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.32em] text-yellow-200">Our Vision</p>
               <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-                To be the preferred fencing partner for projects where strength,
-                reliability and trust are non-negotiable.
+                To be the preferred fencing partner for projects where strength, reliability and trust are non-negotiable.
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-100">
-                We are focused on creating long-term value through disciplined
-                manufacturing, strong relationships and solutions that perform
-                confidently in real-world conditions.
+                We are focused on creating long-term value through disciplined manufacturing, strong relationships and solutions that perform confidently in real-world conditions.
               </p>
             </div>
 
-            <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-slate-950/30 p-6">
-              <div className="flex items-start gap-3">
-                <Award className="mt-1 text-yellow-300" size={22} />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Why teams choose to stay with us
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-200">
-                    Because we care about the full outcome, not just supply. We
-                    aim to make every project feel supported, timely and built
-                    to last.
-                  </p>
-                </div>
+            {/* Divider */}
+            <div className="hidden bg-yellow-400/15 lg:block" />
+
+            {/* Right — Why teams choose us */}
+            <div className="flex flex-col justify-center p-8 sm:p-10">
+              <div className="flex items-start gap-3 mb-6">
+                <Award className="mt-1 shrink-0 text-yellow-300" size={22} />
+                <h3 className="text-2xl font-semibold text-white">Why teams choose to stay with us</h3>
+              </div>
+              <p className="text-base leading-8 text-slate-100">
+                Because we care about the full outcome, not just supply. We aim to make every project feel supported, timely and built to last.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {trustPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="flex items-start gap-2 rounded-2xl border border-white/10 bg-slate-950/30 p-4"
+                  >
+                    <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-yellow-300" />
+                    <p className="text-xs leading-6 text-slate-200">{point}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
+        {/* ══════════════════════════════════
+            SECTION 6 — CTA
+        ══════════════════════════════════ */}
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-6 sm:py-8 md:py-10 backdrop-blur-2xl sm:px-10"
+          className="relative overflow-hidden rounded-[2.2rem] border border-white/[0.12] bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-6 sm:px-10 sm:py-8 md:py-10 backdrop-blur-2xl"
         >
           <div className="absolute -right-12 top-0 h-44 w-44 rounded-full bg-yellow-400/20 blur-[90px]" />
           <div className="absolute bottom-0 left-0 h-36 w-36 rounded-full bg-cyan-400/10 blur-[80px]" />
 
-          <div className="relative flex flex-col  lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">
-                Let&apos;s Build Together
-              </p>
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-yellow-300">Let&apos;s Build Together</p>
               <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Looking for a fencing partner that understands both quality and
-                project pressure?
+                Looking for a fencing partner that understands both quality and project pressure?
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-200">
-                Connect with Parag Industries to discuss your next requirement.
-                We will help you move from idea to execution with clarity,
-                confidence and dependable support.
+                Connect with Parag Industries to discuss your next requirement. We will help you move from idea to execution with clarity, confidence and dependable support.
               </p>
             </div>
 
-         <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+            <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
@@ -454,6 +431,7 @@ export default function AboutPage() {
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

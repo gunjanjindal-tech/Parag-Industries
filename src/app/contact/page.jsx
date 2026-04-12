@@ -50,7 +50,7 @@ export default function ContactPage() {
     pt-12 pb-12 sm:pt-14 sm:pb-14 md:pt-16 md:pb-16">
 
       {/* GLOW */}
-      <div className="absolute w-[500px] h-[500px] bg-yellow-400/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
+    
       <div className="absolute w-[400px] h-[400px] bg-blue-500/20 blur-[100px] rounded-full bottom-[-100px] right-[-100px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
