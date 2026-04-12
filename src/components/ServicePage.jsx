@@ -6,7 +6,7 @@ import ProcessSection from "@/components/ProcessSection";
 
 export default function ServicesPage() {
   return (
-    <main className=" bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
+    <main className=" bg-[radial-gradient(_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
 
       {/* HERO */}
       <section className="px-4 sm:px-6 md:px-8 pt-8 pb-6 sm:pt-10 sm:pb-8 md:pt-12 md:pb-10 text-center max-w-7xl mx-auto">

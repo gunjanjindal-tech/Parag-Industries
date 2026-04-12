@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="backdrop-blur-md  bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] ">
+    <main className="backdrop-blur-md  bg-[radial-gradient(_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] ">
       
       {/* HERO SECTION */}
      <section className="text-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">

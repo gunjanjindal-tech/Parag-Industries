@@ -50,7 +50,7 @@ const fadeUp = {
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_25%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
+    <main className="bg-[radial-gradient(_transparent_25%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
 
       {/* HERO */}
       <section className="text-center px-6 pt-20 pb-16 max-w-5xl mx-auto">
