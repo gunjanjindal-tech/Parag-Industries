@@ -16,35 +16,11 @@ import {
   Phone,
 } from "lucide-react";
 
-const statItems = [
-  { label: "Security Grade", value: "Industrial", icon: ShieldCheck },
-  { label: "Service Life", value: "25+ Years", icon: Award },
-  { label: "Performance", value: "High Load", icon: CircleGauge },
-  { label: "Standards", value: "ISO Certified", icon: Zap },
-];
+// Icons for the stats bar — always 4, mapped by position
+const statIcons = [ShieldCheck, Award, CircleGauge, Zap];
 
-const overviewCards = [
-  {
-    icon: Layers,
-    title: "Durability",
-    desc: "Built to withstand extreme environmental conditions, UV exposure, and mechanical stress over decades.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Strength",
-    desc: "High-tensile materials engineered for maximum load-bearing capacity and structural integrity.",
-  },
-  {
-    icon: Settings,
-    title: "Low Maintenance",
-    desc: "Corrosion-resistant coatings and precision engineering drastically reduce upkeep requirements.",
-  },
-  {
-    icon: Award,
-    title: "Versatility",
-    desc: "Adaptable across industrial, commercial, agricultural, and residential project environments.",
-  },
-];
+// Icons for the overview cards — always 4, mapped by position
+const overviewIcons = [Layers, ShieldCheck, Settings, Award];
 
 export default async function ProductDetail({ params }) {
   const { slug } = await params;
@@ -53,6 +29,18 @@ export default async function ProductDetail({ params }) {
   if (!product) {
     notFound();
   }
+
+  // Build statItems from per-product data
+  const statItems = (product.stats || []).map((stat, i) => ({
+    ...stat,
+    icon: statIcons[i] ?? ShieldCheck,
+  }));
+
+  // Build overviewCards from per-product data
+  const overviewCards = (product.overviewCards || []).map((card, i) => ({
+    ...card,
+    icon: overviewIcons[i] ?? Layers,
+  }));
 
   return (
     <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
@@ -143,21 +131,20 @@ export default async function ProductDetail({ params }) {
                     sizes="(max-width: 640px) 100vw, 50vw"
                     className="object-cover"
                   />
-                  {/* Image overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 </div>
               </div>
 
-              {/* Floating badges — inside image so they never overflow on mobile */}
+              {/* Floating badges — now show first 2 stats from product */}
               <div className="absolute bottom-6 left-3 right-3 flex gap-2">
                 <div className="flex flex-1 items-center gap-2 rounded-xl border border-white/[0.14] bg-slate-900/85 px-3 py-2.5 backdrop-blur-xl shadow-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
                   <ShieldCheck size={18} className="text-yellow-300 shrink-0" />
                   <div className="min-w-0">
                     <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
-                      Security Grade
+                      {statItems[0]?.label ?? "Security Grade"}
                     </p>
                     <p className="truncate text-xs font-semibold text-white sm:text-sm">
-                      Industrial Ready
+                      {statItems[0]?.value ?? "Industrial Ready"}
                     </p>
                   </div>
                 </div>
@@ -165,10 +152,10 @@ export default async function ProductDetail({ params }) {
                   <CircleGauge size={18} className="text-yellow-300 shrink-0" />
                   <div className="min-w-0">
                     <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
-                      Performance
+                      {statItems[1]?.label ?? "Service Life"}
                     </p>
                     <p className="truncate text-xs font-semibold text-white sm:text-sm">
-                      Long Service Life
+                      {statItems[1]?.value ?? "Long Service Life"}
                     </p>
                   </div>
                 </div>
@@ -188,7 +175,6 @@ export default async function ProductDetail({ params }) {
               <div
                 key={label}
                 className={`flex flex-col items-center gap-2 px-3 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 ${
-                  // On mobile (2-col): right border on cols 0 only per row; on desktop (4-col): all except last
                   i % 2 === 0 ? "border-r border-white/[0.08]" : ""
                 } lg:border-r lg:last:border-r-0`}
               >
@@ -208,11 +194,10 @@ export default async function ProductDetail({ params }) {
       </section>
 
       {/* ════════════════════════════════════════
-          SECTION 3 — OVERVIEW + OVERVIEW CARDS
+          SECTION 3 — OVERVIEW CARDS
       ════════════════════════════════════════ */}
       <section className="relative z-10 mt-24 px-4 sm:px-6">
         <div className="mx-auto max-w-7xl">
-          {/* Section header */}
           <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
@@ -230,7 +215,6 @@ export default async function ProductDetail({ params }) {
             </p>
           </div>
 
-          {/* 4 overview cards — horizontal layout */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {overviewCards.map(({ icon: Icon, title, desc }) => (
               <div
@@ -240,11 +224,8 @@ export default async function ProductDetail({ params }) {
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/[0.12] bg-slate-950/50">
                   <Icon size={22} className="text-yellow-300" />
                 </div>
-                <h3 className="mb-2.5 text-lg font-semibold text-white">
-                  {title}
-                </h3>
+                <h3 className="mb-2.5 text-lg font-semibold text-white">{title}</h3>
                 <p className="text-sm leading-7 text-slate-400">{desc}</p>
-                {/* Hover glow */}
                 <div className="absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-yellow-300/[0.06] blur-2xl opacity-0 transition duration-300 group-hover:opacity-100" />
               </div>
             ))}
@@ -253,12 +234,11 @@ export default async function ProductDetail({ params }) {
       </section>
 
       {/* ════════════════════════════════════════
-          SECTION 4 — FEATURES (Full Width List)
+          SECTION 4 — FEATURES
       ════════════════════════════════════════ */}
       <section className="relative z-10 mt-24 px-4 sm:px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-start">
-            {/* Left label */}
             <div className="lg:sticky lg:top-24">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
                 What's Inside
@@ -273,7 +253,6 @@ export default async function ProductDetail({ params }) {
               <div className="mt-8 h-px w-16 bg-yellow-300/40" />
             </div>
 
-            {/* Right list */}
             <div className="space-y-3">
               {(product.features || []).map((item, i) => (
                 <div
@@ -296,7 +275,7 @@ export default async function ProductDetail({ params }) {
       </section>
 
       {/* ════════════════════════════════════════
-          SECTION 5 — BENEFITS + APPLICATIONS (2-col)
+          SECTION 5 — BENEFITS + APPLICATIONS
       ════════════════════════════════════════ */}
       <section className="relative z-10 mt-24 px-4 sm:px-6">
         <div className="mx-auto max-w-7xl">
@@ -309,9 +288,7 @@ export default async function ProductDetail({ params }) {
                   <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
                     Why Choose This
                   </p>
-                  <h2 className="text-2xl font-bold sm:text-3xl">
-                    Project Benefits
-                  </h2>
+                  <h2 className="text-2xl font-bold sm:text-3xl">Project Benefits</h2>
                 </div>
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.10]">
                   <Award size={22} className="text-emerald-300" />
@@ -323,10 +300,7 @@ export default async function ProductDetail({ params }) {
                     key={item}
                     className="flex items-start gap-4 rounded-xl border border-white/[0.07] bg-slate-950/30 px-5 py-4"
                   >
-                    <CheckCircle2
-                      size={17}
-                      className="mt-0.5 shrink-0 text-emerald-300"
-                    />
+                    <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-emerald-300" />
                     <p className="text-sm leading-7 text-slate-200">{item}</p>
                   </div>
                 ))}
@@ -340,9 +314,7 @@ export default async function ProductDetail({ params }) {
                   <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300">
                     Where It Fits
                   </p>
-                  <h2 className="text-2xl font-bold sm:text-3xl">
-                    Best-Fit Applications
-                  </h2>
+                  <h2 className="text-2xl font-bold sm:text-3xl">Best-Fit Applications</h2>
                 </div>
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/[0.10]">
                   <Layers size={22} className="text-cyan-300" />
@@ -354,10 +326,7 @@ export default async function ProductDetail({ params }) {
                     key={item}
                     className="flex items-start gap-4 rounded-xl border border-white/[0.07] bg-slate-950/30 px-5 py-4"
                   >
-                    <CheckCircle2
-                      size={17}
-                      className="mt-0.5 shrink-0 text-cyan-300"
-                    />
+                    <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-cyan-300" />
                     <p className="text-sm leading-7 text-slate-200">{item}</p>
                   </div>
                 ))}
@@ -373,7 +342,6 @@ export default async function ProductDetail({ params }) {
       <section className="relative z-10 mt-20 px-4 pb-20 sm:px-6 sm:pb-24">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[2rem] border border-yellow-300/20 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(13,59,102,0.60))] p-10 backdrop-blur-xl sm:p-14">
-            {/* Decorative blobs inside CTA */}
             <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-yellow-300/[0.10] blur-3xl" />
             <div className="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-cyan-400/[0.08] blur-3xl" />
 

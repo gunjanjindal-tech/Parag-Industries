@@ -102,11 +102,6 @@ export default function Footer() {
   </Link>
 </li>
 
-<li>
-  <Link href="/warranty" className="hover:text-accent transition">
-    Warranty Policy
-  </Link>
-</li>
             </ul>
           </div>
 
@@ -147,20 +142,35 @@ export default function Footer() {
     {/* LOCATION (OPTIONAL GOOGLE MAP LINK) */}
     <li>
       <a
-        href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x396db25a456c8bf7:0x43f9532f48346f30?entry=s&sa=X&ved=2ahUKEwil6oOp0LWTAxWt96ACHbprEWUQ4kB6BAgEEAA&hl=en"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 hover:text-yellow-300 transition"
-      >
-        <MapPin size={16} className="text-accent" />
-        Rajasthan, India
+        href="https://maps.app.goo.gl/AiureCU257AeFKAe9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 hover:text-yellow-300 transition"
+                >
+        <MapPin className="size-4 md:size-8 text-accent" />
+       G-1-30 road no 2A RIICO Industrial Area bindayaka jaipur -302012
       </a>
     </li>
 
   </ul>
 </div>
-
         </div>
+
+        {/* EMBEDDED MAP */}
+        <div className="w-full mb-10 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.478922822337!2d75.65285027577298!3d26.920027659775574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db25a456c8bf7%3A0x43f9532f48346f30!2sParag%20Industries!5e0!3m2!1sen!2sin!4v1776570120455!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Parag Industries Location"
+            className="w-full h-[250px] sm:h-[300px] md:h-[350px]"
+          />
+        </div>
+
 
         {/* BOTTOM */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
@@ -178,7 +188,6 @@ export default function Footer() {
               PashGen
             </a>
           </p>
-
         </div>
 
       </div>

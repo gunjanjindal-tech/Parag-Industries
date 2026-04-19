@@ -1,11 +1,15 @@
 import MainProductCard from "@/components/MainProductCard";
 import { products } from "../data/products";
+import { Shield, Train, Landmark, Building2, Construction, Sun, Factory, Home } from "lucide-react";
+import ProductsGrid from "@/components/ProductsGrid";
+
 
 export const metadata = {
-  title: "Solar Products | Your Brand",
+  title: "Fencing Products | Parag Industries",
   description:
-    "Explore high-quality solar panels, inverters, and battery solutions for homes and businesses.",
+    "Explore premium fencing solutions — Chain Link, Welded Mesh, Barbed Wire, Concertina Coil, Anti Climb Fence, Gabion Box and more for industrial, infrastructure, and defence projects.",
 };
+
 
 export default function ProductsPage() {
   return (
@@ -14,45 +18,54 @@ export default function ProductsPage() {
       {/* HERO SECTION */}
      <section className="text-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-    Solar Products & Solutions
-    <span className="block bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent">
-      Built for Performance & Savings
-    </span>
-  </h1>
-
-  <p className="mt-6 max-w-3xl mx-auto text-gray-300 text-lg">
-    Clean energy solutions designed for homes, businesses, and large-scale solar projects.
-  </p>
+          Premium Fencing Products
+          <span className="block bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent">
+            Built for Strength & Security
+          </span>
+        </h1>
+        <p className="mt-6 max-w-3xl mx-auto text-gray-300 text-lg">
+          High-quality wire mesh and fencing solutions for residential, commercial, industrial, defence, and infrastructure projects across India.
+        </p>
       </section>
 
-      {/* WHY GO SOLAR */}
+{/* WHY CHOOSE US */}
       <section className="max-w-7xl mx-auto px-4 py-8 text-center">
-  <h2 className="text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12">
-    Why Go Solar with Us?
-  </h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12">
+          Why Choose Parag Industries?
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {[
+            {
+              title: "30+ Years of Experience",
+              desc: "Trusted manufacturer and supplier of fencing products since 1996.",
+            },
+            {
+              title: "Customisable Products",
+              desc: "All products available in GI, SS, MS, PVC as per your requirement.",
+            },
+            {
+              title: "Pan-India Supply",
+              desc: "Supplying to government, defence, railways, NHAI and more.",
+            },
+            {
+              title: "Premium Quality",
+              desc: "Consistent craftsmanship with a focus on durability and performance.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-yellow-300/30 transition"
+            >
+              <p className="font-semibold text-lg text-white">{item.title}</p>
+              <p className="text-sm text-gray-300 mt-2">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-  <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-    {[
-      "Lower Electricity Bills",
-      "Clean Renewable Energy",
-      "Government Subsidies",
-      "Energy Independence",
-    ].map((item) => (
-      <div
-        key={item}
-        className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-yellow-300/30 transition"
-      >
-        <p className="font-semibold text-lg text-white">{item}</p>
-        <p className="text-sm text-gray-300 mt-2">
-          Save more and switch to sustainable solar power.
-        </p>
-      </div>
-    ))}
-  </div>
-</section>
 
       {/* PRODUCT GRID */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 ">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 ">
         <h2 className="text-3xl md:text-4xl  font-bold mb-6 sm:mb-8 md:mb-10 text-center">
           Our Products
         </h2>
@@ -66,108 +79,81 @@ export default function ProductsPage() {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
-{/* HOW IT WORKS */}
-   <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
-  
-  <div className="text-center mb-8 sm:mb-10 md:mb-12">
-    <h2 className="text-3xl md:text-4xl font-bold text-white">
-      How Solar Works
-    </h2>
-    <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-      A seamless process designed to help you switch to solar with ease and confidence.
-    </p>
-  </div>
+        {/* PRODUCT GRID */}
+      <ProductsGrid />
 
-  <div className="grid md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 relative">
-    
-    {[
-      {
-        title: "Free Consultation",
-        desc: "We analyze your energy needs and provide expert guidance.",
-      },
-      {
-        title: "Custom Design",
-        desc: "Tailored solar solutions designed for maximum efficiency.",
-      },
-      {
-        title: "Professional Installation",
-        desc: "Our team installs your system with precision and care.",
-      },
-      {
-        title: "Start Saving",
-        desc: "Generate your own energy and reduce electricity bills.",
-      },
-    ].map((step, i) => (
-      
-      <div
-        key={i}
-        className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-300/30"
-      >
-        
-        {/* STEP NUMBER */}
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-400 text-black font-bold shadow-lg">
-          {i + 1}
-        </div>
-
-        {/* TITLE */}
-        <h3 className="mt-6 text-lg font-semibold text-white">
-          {step.title}
-        </h3>
-
-        {/* DESC */}
-        <p className="mt-3 text-sm text-gray-300 leading-6">
-          {step.desc}
-        </p>
-
-        {/* ARROW (except last) */}
-        {i !== 3 && (
-          <div className="hidden md:block absolute top-1/2 right-[-20px] transform -translate-y-1/2 text-yellow-400 text-xl">
-            →
-          </div>
-        )}
-      </div>
-    ))}
-  </div>
-</section>
-      
-{/* SOLAR SOLUTIONS SECTION */}
+ {/* HOW IT WORKS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12
-gap-5 sm:gap-6 md:gap-8">
-    Our Solar Solutions
-  </h2>
-
-  <div className="grid md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
-    {[
-      {
-        title: "Residential Solar",
-        img: "/products/Residential.png",
-      },
-      {
-        title: "Commercial Solar",
-        img: "/products/Commercial.png",
-      },
-      {
-        title: "Industrial Solar",
-        img: "/products/Industrial.png",
-      },
-    ].map((item) => (
-      <div
-        key={item.title}
-        className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl"
-      >
-        <img
-          src={item.img}
-          className="h-48 w-full object-cover"
-        />
-
-        <div className="p-5">
-          <h3 className="text-lg font-semibold text-white flex items-center justify-center gap-2">
-            {item.title}
-          </h3>
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            How It Works
+          </h2>
+          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+            A simple and transparent process to get you the right fencing solution, delivered on time.
+          </p>
         </div>
+        <div className="grid md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 relative">
+          {[
+            {
+              title: "Share Your Requirement",
+              desc: "Tell us your product type, dimensions, material, and quantity.",
+            },
+            {
+              title: "Get a Custom Quote",
+              desc: "We provide a competitive price tailored to your exact specification.",
+            },
+            {
+              title: "Order Confirmation",
+              desc: "Confirm the order and we begin manufacturing or dispatch immediately.",
+            },
+            {
+              title: "Delivery & Support",
+              desc: "On-time delivery with after-sales support across India.",
+            },
+          ].map((step, i) => (
+            <div
+              key={i}
+              className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-300/30"
+            >
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-400 text-black font-bold shadow-lg">
+                {i + 1}
+              </div>
+              <h3 className="mt-6 text-lg font-semibold text-white">{step.title}</h3>
+              <p className="mt-3 text-sm text-gray-300 leading-6">{step.desc}</p>
+              {i !== 3 && (
+                <div className="hidden md:block absolute top-1/2 right-[-20px] transform -translate-y-1/2 text-yellow-400 text-xl">
+                  →
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+      
+{/* SECTORS WE SERVE */}
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12">
+    Sectors We Serve
+  </h2>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+    {[
+      { title: "Defence & MES",              icon: Shield },
+      { title: "Railways",                   icon: Train },
+      { title: "NHAI & Highways",            icon: Landmark },
+      { title: "Government Projects",        icon: Building2 },
+      { title: "Infrastructure",             icon: Construction },
+      { title: "Solar Projects",             icon: Sun },
+      { title: "PEB Structures",             icon: Factory },
+      { title: "Residential & Commercial",   icon: Home },
+    ].map(({ title, icon: Icon }) => (
+      <div
+        key={title}
+        className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center hover:border-yellow-300/30 transition"
+      >
+        <Icon size={28} className="mx-auto mb-3 text-accent" />
+        <p className="text-sm font-semibold text-white">{title}</p>
       </div>
     ))}
   </div>
