@@ -22,6 +22,47 @@ const statIcons = [ShieldCheck, Award, CircleGauge, Zap];
 // Icons for the overview cards — always 4, mapped by position
 const overviewIcons = [Layers, ShieldCheck, Settings, Award];
 
+// ── DYNAMIC METADATA ─────────────────────────────────────────────────────────
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const product = products.find((item) => item.slug === slug);
+
+  if (!product) {
+    return {
+      title: "Fencing Product | Parag Industries",
+      description:
+        "View this industrial fencing product from Parag Industries — manufacturer in Jaipur, India.",
+    };
+  }
+
+  const title = `${product.title} Manufacturer in India | Parag Industries`;
+  const description =
+    product.desc ||
+    `Buy high-quality ${product.title} from Parag Industries, Jaipur. Available in GI, SS, MS, and PVC. Ideal for industrial, defence, and infrastructure projects. Pan-India supply.`;
+  const image = product.images?.[0] || product.image || "/images/og-default.jpg";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://paragindustries.in/products/${slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://paragindustries.in/products/${slug}`,
+      images: [{ url: image, width: 1200, height: 630, alt: product.title }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
+
 export default async function ProductDetail({ params }) {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
@@ -42,8 +83,50 @@ export default async function ProductDetail({ params }) {
     icon: overviewIcons[i] ?? Layers,
   }));
 
+  // ── Product JSON-LD ─────────────────────────────────────────────────────────
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.desc,
+    image: product.images?.[0] || product.image,
+    url: `https://paragindustries.in/products/${slug}`,
+    brand: {
+      "@type": "Brand",
+      name: "Parag Industries",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Parag Industries",
+      url: "https://paragindustries.in",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "G-1-30, Road No. 2A, RIICO Industrial Area",
+        addressLocality: "Jaipur",
+        addressRegion: "Rajasthan",
+        addressCountry: "IN",
+      },
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      areaServed: "IN",
+      seller: {
+        "@type": "Organization",
+        name: "Parag Industries",
+      },
+    },
+  };
+
   return (
     <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
+
+      {/* ── Product JSON-LD ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+
       {/* ── Global ambient blobs ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute left-[-9%] top-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
@@ -121,47 +204,45 @@ export default async function ProductDetail({ params }) {
             </div>
 
             {/* Right — image card */}
-<div className="relative">
+            <div className="relative">
+              {/* MAIN IMAGE */}
+              <div className="overflow-hidden rounded-[2.2rem] border border-white/[0.13] bg-white/[0.06] p-3 shadow-[0_40px_100px_rgba(3,7,18,0.55)] backdrop-blur-xl">
+                <a
+                  href={product.images?.[0] || product.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-[1.7rem]">
+                    <Image
+                      src={product.images?.[0] || product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover hover:scale-105 transition-all duration-500 cursor-pointer"
+                    />
+                  </div>
+                </a>
+              </div>
 
-  {/* MAIN IMAGE */}
-  <div className="overflow-hidden rounded-[2.2rem] border border-white/[0.13] bg-white/[0.06] p-3 shadow-[0_40px_100px_rgba(3,7,18,0.55)] backdrop-blur-xl">
-    <a
-  href={product.images?.[0] || product.image}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block"
->
-  <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-[1.7rem]">
-    <Image
-      src={product.images?.[0] || product.image}
-      alt={product.title}
-      fill
-      className="object-cover hover:scale-105 transition-all duration-500 cursor-pointer"
-    />
-  </div>
-</a>
-  </div>
-
-  {/* THUMBNAILS */}
-  <div className="flex gap-3 mt-4 overflow-x-auto">
-    {(product.images || [product.image]).map((img, i) => (
-      <a
-        key={i}
-        href={img}
-        target="_blank"
-        className="relative w-20 h-20 rounded-xl overflow-hidden border border-white/20 hover:border-yellow-400 transition"
-      >
-        <Image
-          src={img}
-          alt={`thumb-${i}`}
-          fill
-          className="object-cover"
-        />
-      </a>
-    ))}
-  </div>
-
-</div>
+              {/* THUMBNAILS */}
+              <div className="flex gap-3 mt-4 overflow-x-auto">
+                {(product.images || [product.image]).map((img, i) => (
+                  <a
+                    key={i}
+                    href={img}
+                    target="_blank"
+                    className="relative w-20 h-20 rounded-xl overflow-hidden border border-white/20 hover:border-yellow-400 transition"
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.title} image ${i + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -182,12 +263,8 @@ export default async function ProductDetail({ params }) {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-300/25 bg-yellow-300/[0.10] sm:h-12 sm:w-12 sm:rounded-2xl">
                   <Icon size={18} className="text-yellow-300 sm:size-[22px]" />
                 </div>
-                <p className="text-lg font-bold text-white sm:text-2xl">
-                  {value}
-                </p>
-                <p className="text-[10px] uppercase tracking-widest text-slate-400 sm:text-xs">
-                  {label}
-                </p>
+                <p className="text-lg font-bold text-white sm:text-2xl">{value}</p>
+                <p className="text-[10px] uppercase tracking-widest text-slate-400 sm:text-xs">{label}</p>
               </div>
             ))}
           </div>
@@ -244,12 +321,9 @@ export default async function ProductDetail({ params }) {
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-yellow-300">
                 What's Inside
               </p>
-              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-                Key Features
-              </h2>
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">Key Features</h2>
               <p className="mt-4 text-base leading-8 text-slate-400">
-                Every feature is carefully engineered to meet demanding
-                industrial and commercial requirements.
+                Every feature is carefully engineered to meet demanding industrial and commercial requirements.
               </p>
               <div className="mt-8 h-px w-16 bg-yellow-300/40" />
             </div>
@@ -352,8 +426,7 @@ export default async function ProductDetail({ params }) {
                   Need Site-Specific Recommendation?
                 </p>
                 <h3 className="text-2xl font-bold leading-snug text-white sm:text-3xl md:text-4xl">
-                  Share your project requirement and get the right fencing
-                  solution with clear specs and fast support.
+                  Share your project requirement and get the right fencing solution with clear specs and fast support.
                 </h3>
               </div>
 

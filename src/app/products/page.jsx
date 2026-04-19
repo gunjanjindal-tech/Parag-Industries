@@ -1,13 +1,26 @@
 import { Shield, Train, Landmark, Building2, Construction, Sun, Factory, Home } from "lucide-react";
 import ProductsGrid from "@/components/ProductsGrid";
 
-
 export const metadata = {
-  title: "Fencing Products | Parag Industries",
+  title: "Industrial Fencing Products | Chain Link, Welded Mesh, Barbed Wire — Parag Industries",
   description:
-    "Explore premium fencing solutions — Chain Link, Welded Mesh, Barbed Wire, Concertina Coil, Anti Climb Fence, Gabion Box and more for industrial, infrastructure, and defence projects.",
+    "Explore Parag Industries' full range of fencing products — Chain Link Fence, Welded Mesh, Barbed Wire, Concertina Coil, Anti Climb Fence, and Gabion Box. Available in GI, SS, MS, and PVC. Customisable for all project types.",
+  alternates: { canonical: "https://paragindustries.in/products" },
+  openGraph: {
+    title: "Fencing Products — Chain Link, Welded Mesh, Barbed Wire | Parag Industries",
+    description:
+      "High-quality wire mesh and fencing products for industrial, defence, railway, and infrastructure projects. Trusted by government agencies and contractors across India.",
+    url: "https://paragindustries.in/products",
+    images: [{ url: "/images/og-products.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fencing Products | Parag Industries Jaipur",
+    description:
+      "Chain Link, Welded Mesh, Barbed Wire, Concertina Coil, Anti Climb Fence, Gabion Box. Pan-India supply since 1996.",
+    images: ["/images/og-products.jpg"],
+  },
 };
-
 
 export default function ProductsPage() {
   return (

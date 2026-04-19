@@ -1,5 +1,13 @@
-export default function TermsPage() {
+export const metadata = {
+  title: "Terms and Conditions | Parag Industries",
+  description: "Terms and conditions for paragindustries.in.",
+  alternates: { canonical: "https://paragindustries.in/terms-and-conditions" },
+  robots: { index: false, follow: false },
+};
+
+export default function TermsPage() {  
   return (
+    
     <section className="min-h-screen px-6 py-16 
     bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_25%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)]">
 
