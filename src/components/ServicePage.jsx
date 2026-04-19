@@ -169,7 +169,9 @@ export default function ServicesPage() {
       {[
         { name: "Solar Projects", icon: <Sun size={22} /> },
         { name: "Infrastructure", icon: <Building2 size={22} /> },
-        { name: "Railways", icon: <Train size={22} /> },
+              { name: "Railways", icon: <Train size={22} /> },
+        { name: "Defence", icon: <Train size={22} /> },
+        
       ].map((item) => (
         <div
           key={item.name}
@@ -192,7 +194,7 @@ export default function ServicesPage() {
 
       <div className="rounded-[2.5rem] p-[1px] bg-gradient-to-b from-yellow-400/40 to-transparent">
 
-        <div className="rounded-[2.5rem] bg-[#051923]/90 backdrop-blur-xl p-10 text-center border border-white/10">
+        <div className="rounded-[2.5rem] bg-[#051923]/90 backdrop-blur-xl py-20 px-10 text-center border border-white/10">
 
           <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-2xl bg-yellow-400 text-black shadow-lg">
             <Shield size={30} />
@@ -218,8 +220,10 @@ export default function ServicesPage() {
 
       {[
         { name: "Government Projects", icon: <Landmark size={22} /> },
-        { name: "PEB Structures", icon: <Factory size={22} /> },
-        { name: "Industrial Plants", icon: <Factory size={22} /> },
+        { name: "PEB Structures (Pre Engineered Buildings)", icon: <Factory size={22} /> },
+              { name: "MES (Military Engineer Services)", icon: <Factory size={22} /> },
+        { name: "NHAI", icon: <Factory size={22} /> },
+        
       ].map((item) => (
         <div
           key={item.name}

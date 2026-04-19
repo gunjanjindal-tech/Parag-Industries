@@ -160,23 +160,23 @@ export default function ProductsPage() {
 </section>
 
       {/* CTA SECTION */}
-      <section className="backdrop-blur-md  bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)]  text-white text-center py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8">
+      <section className=" text-white text-center py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8">
         <h2 className="text-3xl md:text-5xl font-bold">
-          Want to install solar?
+          Need a fencing solution?
         </h2>
-        <p className="mt-3">
-          Get a free consultation and start saving today.
+        <p className="mt-3 text-gray-300">
+          Get a free quote and let our experts recommend the right product for your project.
         </p>
-
-      <a
-  href="https://wa.me/919829080341?text=Hi%20I%20am%20interested%20in%20your%20solar%20solutions"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition"
->
-  Get Free Quote
-</a>
+         <a
+          href="https://wa.me/919829080341?text=Hi%2C%20I%20am%20interested%20in%20your%20fencing%20products"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition hover:cursor-pointer hover:scale-105 shadow-lg"
+         >
+          Get Free Quote
+        </a>
       </section>
+
 
     </main>
   );

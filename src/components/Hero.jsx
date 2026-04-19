@@ -48,8 +48,8 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 text-slate-300 max-w-lg text-base leading-8 sm:text-lg">
-              Delivering high-quality fencing solutions including chain link,
-              welded mesh, barbed wire, and more — trusted by industries,
+              Delivering high-quality fencing solutions including Chain Link,
+              Welded Mesh, Barbed Wire, and more — trusted by industries,
               infrastructure, and government projects.
             </p>
 

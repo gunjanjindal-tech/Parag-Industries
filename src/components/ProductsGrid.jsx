@@ -6,31 +6,54 @@ import ProductsViewMore from "./ProductsViewMore";
 const INITIAL_COUNT = 9;
 
 export function ProductCard({ item }) {
+  const firstImage = item.images?.[0] || item.image;
+  const secondImage = item.images?.[1];
+
   return (
     <div className="group rounded-2xl overflow-hidden bg-[#0b2e4f]/40 border border-white/10 hover:shadow-xl transition-all duration-300">
+      
       <div className="relative h-[220px] overflow-hidden">
+        
+        {/* First Image */}
         <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-        />
+  src={firstImage}
+  alt={item.title}
+  className={`absolute w-full h-full object-cover transition-all duration-500 ${
+    secondImage ? "group-hover:opacity-0" : ""
+  }`}
+/>
+
+        {/* Second Image (on hover) */}
+       {secondImage && (
+  <img
+    src={secondImage}
+    alt={item.title}
+    className="absolute w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-500"
+  />
+)}
+
         <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent" />
+
         <span className="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-semibold">
           Premium
         </span>
       </div>
+
       <div className="p-5">
         <h3 className="text-white text-lg font-semibold mb-2 group-hover:text-yellow-300 transition">
           {item.title}
         </h3>
+
         <div className="flex gap-1 mb-2">
           {Array.from({ length: 5 }).map((_, i) => (
             <span key={i} className="text-yellow-400 text-sm">★</span>
           ))}
         </div>
+
         <p className="text-gray-300 text-sm mb-4 min-h-14 line-clamp-3">
           {item.desc}
         </p>
+
         <Link href={`/products/${item.slug}`}>
           <button className="w-full bg-yellow-400 text-black py-2.5 rounded-lg font-semibold text-sm hover:scale-[1.03] hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
             View Details <ArrowRight size={15} />
@@ -40,7 +63,6 @@ export function ProductCard({ item }) {
     </div>
   );
 }
-
 export default function ProductsGrid() {
   const initial = products.slice(0, INITIAL_COUNT);
   const remaining = products.slice(INITIAL_COUNT);
