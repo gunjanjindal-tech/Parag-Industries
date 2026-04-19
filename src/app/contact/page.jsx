@@ -159,7 +159,7 @@ export default function ContactPage() {
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full bg-yellow-400  text-black py-2.5 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
+                className="w-full bg-yellow-400  text-black py-2.5 rounded-xl font-semibold hover:scale-105 transition shadow-lg cursor-pointer hover:bg-yellow-300"
               >
                 Send Message
               </button>
@@ -175,7 +175,20 @@ export default function ContactPage() {
           </motion.div>
 
         </div>
+
       </div>
+      {/* EMBEDDED MAP */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-10">
+  <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-lg">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.478922822337!2d75.65285027577298!3d26.920027659775574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db25a456c8bf7%3A0x43f9532f48346f30!2sParag%20Industries!5e0!3m2!1sen!2sin!4v1776570120455!5m2!1sen!2sin"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Parag Industries Location"
+      className="w-full h-[250px] sm:h-[300px] md:h-[400px]"
+    />
+  </div>
+</div>
     </section>
   );
 }

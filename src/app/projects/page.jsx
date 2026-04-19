@@ -122,7 +122,7 @@ export default function ProjectsPage() {
 
         <Link
           href="/contact"
-          className="inline-block mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition"
+          className="inline-block mt-6 bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition hover:cursor-pointer hover:scale-105 shadow-lg "
         >
           Contact Us
         </Link>

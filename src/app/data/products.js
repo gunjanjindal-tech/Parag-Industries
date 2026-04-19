@@ -4,7 +4,10 @@ export const products = [
     slug: "chain-link-fencing",
     title: "Chain Link Fencing",
     desc: "Premium galvanized and PVC-coated chain link fencing with precision-woven diamond mesh — built for strength, flexibility, and long-term outdoor performance across industrial, residential, and infrastructure projects.",
-    image: "/products/gi-chain-link.jpg",
+    images: [
+  "/products/gi-chain-link.jpg",
+  "/products/pvc-chain-link.jpg"
+],
     tags: ["Galvanized", "PVC-Coated", "Customisable", "High Tensile"],
     stats: [
       { label: "Security Grade", value: "Perimeter"      },
@@ -59,7 +62,10 @@ export const products = [
     slug: "barbed-wire",
     title: "Barbed Wire",
     desc: "High-tensile galvanized barbed wire with sharp, uniformly spaced barbs and heavy zinc coating — providing reliable perimeter deterrence for agricultural, industrial, defence, and infrastructure applications.",
-    image: "/products/barbed-wire.jpg",
+    images: [
+  "/products/barbed-wire.jpg",
+  "/products/barbed.jpg"
+],
     tags: ["GI", "PVC-Coated", "High Tensile", "Anti-Intrusion"],
     stats: [
       { label: "Security Grade", value: "High Deterrent" },
@@ -117,7 +123,10 @@ export const products = [
     slug: "welded-wire-mesh",
     title: "Welded Wire Mesh",
     desc: "Electrically welded high-quality mild steel and galvanized wire mesh panels — offering uniform strength, dimensional stability, and versatile performance for fencing, reinforcement, and safety applications.",
-    image: "/products/welded-mesh.jpg",
+    images: [
+  "/products/welded-mesh.jpg",
+  "/products/weldmesh.jpg"
+],
     tags: ["MS", "GI", "SS", "PVC-Coated", "Electric Welded"],
     stats: [
       { label: "Weld Type",     value: "Electric Welded"   },
@@ -174,7 +183,10 @@ export const products = [
     slug: "concertina-coil",
     title: "Concertina Coil",
     desc: "High-tensile galvanized razor wire coils with sharp blades and high spring resilience — engineered for maximum intrusion deterrence in defence, critical infrastructure, and high-security perimeter applications.",
-    image: "/products/concertina-coil.jpg",
+    images: [
+  "/products/concertina-coil.jpg",
+  "/products/concertina.jpg"
+],
     tags: ["BTO", "CBT", "GI", "SS", "Maximum Security"],
     stats: [
       { label: "Security Grade", value: "Maximum"   },
@@ -231,7 +243,10 @@ export const products = [
     slug: "anti-climb-fence",
     title: "Anti-Climb Fence",
     desc: "High-strength galvanized welded mesh panels with dense small-aperture design — engineered to prevent climbing, cutting, and vandalism for airports, data centres, schools, and critical infrastructure.",
-    image: "/products/anti-climb.jpg",
+    images: [
+  "/products/anti-climb.jpg",
+  "/products/anti-climb-fence.jpg"
+],
     tags: ["High Security", "GI", "PVC-Coated", "Anti-Vandal", "Small Aperture"],
     stats: [
       { label: "Security Grade", value: "Anti-Climb"    },
@@ -288,7 +303,10 @@ export const products = [
     slug: "3d-fence",
     title: "3D Fence",
     desc: "Modern welded steel panel fencing with distinctive 3D V-bends for enhanced rigidity and a professional aesthetic — the ideal perimeter solution for residential, commercial, and institutional projects.",
-    image: "/products/3d-fence.jpg",
+    images: [
+      "/products/3d-mesh.jpg",
+  "/products/3d-fence.jpg"
+],
     tags: ["Welded Panels", "GI", "PVC-Coated", "3D V-Bend", "Modern Design"],
     stats: [
       { label: "Panel Type",   value: "3D V-Bend"        },
@@ -345,7 +363,10 @@ export const products = [
     slug: "knotted-wire-fence",
     title: "Knotted Wire Fence",
     desc: "Heavy-duty galvanized knotted wire fencing with flexible mesh that adapts to uneven terrain — the preferred choice for agricultural boundaries, livestock enclosures, and large-scale perimeter protection.",
-  image: "/products/knotted-fence-1.webp",
+    images: [
+    "/products/tknotted-fence.webp",
+  "/products/knotted-fence-1.webp"
+],
     tags: ["GI", "PVC-Coated", "Flexible", "Agricultural", "High Tensile"],
     stats: [
       { label: "Terrain",      value: "Flexible / Uneven" },
@@ -402,7 +423,10 @@ export const products = [
     slug: "gabion-box",
     title: "Gabion Box",
     desc: "Modular galvanized wire mesh cages filled with stones or aggregates — an environmentally friendly, flexible, and durable solution for retaining walls, riverbank protection, and large-scale civil engineering projects.",
-    image: "/products/gabion-box-pvc-coated.jpg",
+    images: [
+  "/products/gabion-box-pvc-coated.jpg",
+  "/products/galvanized-gabion-box.webp"
+],
     tags: ["GI", "PVC-Coated", "Modular", "Civil Engineering", "Permeable"],
     stats: [
       { label: "Structure",    value: "Modular Cage"      },
@@ -459,7 +483,10 @@ export const products = [
     slug: "gi-ms-angles",
     title: "GI / MS Angles",
     desc: "High-quality Mild Steel and Galvanized Iron structural angles with accurate 90° bends and high load-bearing capacity — the backbone of fencing frameworks, structural supports, and fabrication works.",
-    image: "/products/gi-angle.jpg",
+    images: [
+  "/products/gi-angle.jpg",
+  "/products/angel.jpg"
+],
     tags: ["MS", "GI", "Structural", "Hot-Dip Galvanized", "Fabrication"],
     stats: [
       { label: "Material",      value: "MS / GI"          },
@@ -516,7 +543,11 @@ export const products = [
     slug: "gi-wire",
     title: "GI Wire",
     desc: "Hot-dip galvanized mild steel wire available in multiple gauges — flexible, corrosion-resistant, and reliable for binding, fencing, agriculture, and a wide range of industrial and construction applications.",
-    image: "/products/gi-wire.jpg",
+   images: [
+  "/products/gi-wire.jpg",
+  "/products/ms-wire.jpeg",
+  "/products/pvc-coated-gi-wire.webp"
+],
     tags: ["GI", "MS", "PVC-Coated", "Multi-Gauge", "Binding Wire"],
     stats: [
       { label: "Material",     value: "GI / MS / PVC" },
