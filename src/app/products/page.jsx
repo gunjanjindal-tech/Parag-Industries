@@ -1,5 +1,3 @@
-import MainProductCard from "@/components/MainProductCard";
-import { products } from "../data/products";
 import { Shield, Train, Landmark, Building2, Construction, Sun, Factory, Home } from "lucide-react";
 import ProductsGrid from "@/components/ProductsGrid";
 
@@ -63,25 +61,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-
-      {/* PRODUCT GRID */}
-      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12 ">
-        <h2 className="text-3xl md:text-4xl  font-bold mb-6 sm:mb-8 md:mb-10 text-center">
-          Our Products
-        </h2>
-
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
-            {products.map((product, index) => (
-            <MainProductCard
-              key={product.id}
-              product={product}
-              index={index}
-            />
-          ))}
-        </div>
-      </section> */}
-
-        {/* PRODUCT GRID */}
       <ProductsGrid />
 
  {/* HOW IT WORKS */}

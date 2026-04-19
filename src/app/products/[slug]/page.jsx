@@ -121,46 +121,47 @@ export default async function ProductDetail({ params }) {
             </div>
 
             {/* Right — image card */}
-            <div className="relative">
-              <div className="overflow-hidden rounded-[2.2rem] border border-white/[0.13] bg-white/[0.06] p-3 shadow-[0_40px_100px_rgba(3,7,18,0.55)] backdrop-blur-xl">
-                <div className="relative h-[320px] overflow-hidden rounded-[1.7rem] sm:h-[400px]">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-                </div>
-              </div>
+<div className="relative">
 
-              {/* Floating badges — now show first 2 stats from product */}
-              <div className="absolute bottom-6 left-3 right-3 flex gap-2">
-                <div className="flex flex-1 items-center gap-2 rounded-xl border border-white/[0.14] bg-slate-900/85 px-3 py-2.5 backdrop-blur-xl shadow-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
-                  <ShieldCheck size={18} className="text-yellow-300 shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
-                      {statItems[0]?.label ?? "Security Grade"}
-                    </p>
-                    <p className="truncate text-xs font-semibold text-white sm:text-sm">
-                      {statItems[0]?.value ?? "Industrial Ready"}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-1 items-center gap-2 rounded-xl border border-white/[0.14] bg-slate-900/85 px-3 py-2.5 backdrop-blur-xl shadow-xl sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3">
-                  <CircleGauge size={18} className="text-yellow-300 shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-[9px] uppercase tracking-widest text-slate-400 sm:text-[10px]">
-                      {statItems[1]?.label ?? "Service Life"}
-                    </p>
-                    <p className="truncate text-xs font-semibold text-white sm:text-sm">
-                      {statItems[1]?.value ?? "Long Service Life"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  {/* MAIN IMAGE */}
+  <div className="overflow-hidden rounded-[2.2rem] border border-white/[0.13] bg-white/[0.06] p-3 shadow-[0_40px_100px_rgba(3,7,18,0.55)] backdrop-blur-xl">
+    <a
+  href={product.images?.[0] || product.image}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block"
+>
+  <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-[1.7rem]">
+    <Image
+      src={product.images?.[0] || product.image}
+      alt={product.title}
+      fill
+      className="object-cover hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+  </div>
+</a>
+  </div>
+
+  {/* THUMBNAILS */}
+  <div className="flex gap-3 mt-4 overflow-x-auto">
+    {(product.images || [product.image]).map((img, i) => (
+      <a
+        key={i}
+        href={img}
+        target="_blank"
+        className="relative w-20 h-20 rounded-xl overflow-hidden border border-white/20 hover:border-yellow-400 transition"
+      >
+        <Image
+          src={img}
+          alt={`thumb-${i}`}
+          fill
+          className="object-cover"
+        />
+      </a>
+    ))}
+  </div>
+
+</div>
           </div>
         </div>
       </section>
