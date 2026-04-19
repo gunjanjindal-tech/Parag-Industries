@@ -17,8 +17,8 @@ export default async function sitemap() {
   const now = new Date().toISOString();
 
   const staticPages = [
-    { url: `${BASE_URL}/`,                     priority: 1.0,  changeFrequency: "weekly"  },
-    { url: `${BASE_URL}/products`,             priority: 0.9,  changeFrequency: "weekly"  },
+    { url: `${BASE_URL}/`,                     priority: 1.0,  changeFrequency: "monthly"  },
+    { url: `${BASE_URL}/products`,             priority: 0.9,  changeFrequency: "monthly"  },
     { url: `${BASE_URL}/services`,             priority: 0.9,  changeFrequency: "monthly" },
     { url: `${BASE_URL}/projects`,             priority: 0.8,  changeFrequency: "monthly" },
     { url: `${BASE_URL}/about`,                priority: 0.7,  changeFrequency: "monthly" },
