@@ -119,7 +119,7 @@ export default async function ProductDetail({ params }) {
   };
 
   return (
-    <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] text-white">
+    <div className="relative overflow-hidden bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] text-white">
 
       {/* ── Product JSON-LD ── */}
       <script
@@ -129,10 +129,10 @@ export default async function ProductDetail({ params }) {
 
       {/* ── Global ambient blobs ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute left-[-9%] top-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-[110px]" />
+        <div className="absolute left-[-9%] top-10 h-72 w-72 rounded-full " />
         <div className="absolute right-[-12%] top-1/3 h-80 w-80 rounded-full bg-cyan-400/10 blur-[125px]" />
         <div className="absolute bottom-0 left-1/2 h-64 w-[34rem] -translate-x-1/2 rounded-full bg-white/5 blur-[140px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:88px_88px] opacity-[0.35]" />
+        <div className="absolute inset-0  bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] opacity-[0.35]" />
       </div>
 
       {/* ════════════════════════════════════════

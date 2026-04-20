@@ -3,27 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Our Projects | Defence, Railway & Infrastructure Fencing — Parag Industries",
-  description:
-    "View completed fencing projects by Parag Industries across India. Solar parks, NHAI highways, defence installations, railways, and industrial sites. Pan-India execution since 1996.",
-  alternates: { canonical: "https://paragindustries.in/projects" },
-  openGraph: {
-    title: "Completed Fencing Projects | Parag Industries Jaipur",
-    description:
-      "Explore industrial and infrastructure fencing projects completed by Parag Industries for government, defence, railway, and solar clients across India.",
-    url: "https://paragindustries.in/projects",
-    images: [{ url: "/images/og-projects.jpg", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Our Projects | Parag Industries",
-    description:
-      "Defence, railway, NHAI, solar, and industrial fencing projects across India. 30+ years of execution excellence.",
-    images: ["/images/og-projects.jpg"],
-  },
-};
-
 const projects = [
   {
     title: "Solar Park Fencing - Rajasthan",

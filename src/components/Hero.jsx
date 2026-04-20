@@ -19,11 +19,11 @@ const trustBadges = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.18),_transparent_26%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] pt-12 pb-16 sm:pt-14 sm:pb-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#051923] via-[#0d3b66] to-[#051923] pt-12 pb-16 sm:pt-14 sm:pb-20">
 
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute left-[-8%] top-[-4%] h-96 w-96 rounded-full bg-yellow-400/20 blur-[120px]" />
+        <div className="absolute left-[-8%] top-[-4%] h-96 w-96 rounded-full " />
         <div className="absolute right-[-10%] bottom-[-5%] h-80 w-80 rounded-full bg-blue-500/20 blur-[100px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:88px_88px] opacity-[0.35]" />
       </div>

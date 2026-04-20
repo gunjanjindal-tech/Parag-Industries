@@ -112,13 +112,18 @@ export default function Navbar() {
             if (item.name === "Products") {
               return (
                 <div key={item.name}>
-                  <button
-                    onClick={() => setOpenProduct(!openProduct)}
-                    className="w-full flex justify-between border-b pb-2 border-white/10"
-                  >
-                    {item.name}
-                    <span>{openProduct ? "▲" : "▼"}</span>
-                  </button>
+                 <div className="w-full flex justify-between border-b pb-2 border-white/10">
+  <Link
+    href="/products"
+    onClick={() => setIsOpen(false)}
+    className="flex-1"
+  >
+    {item.name}
+  </Link>
+  <button onClick={() => setOpenProduct(!openProduct)}>
+    <span>{openProduct ? "▲" : "▼"}</span>
+  </button>
+</div>
 
                   {openProduct && (
 <div className="pl-4 mt-2 space-y-2 flex flex-col">
