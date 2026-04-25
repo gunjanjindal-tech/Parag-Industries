@@ -184,10 +184,10 @@ export default async function ProductDetail({ params }) {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap gap-4">
-                <Link
+             <div className="flex flex-nowrap gap-3">
+                  <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-7 py-3.5 font-semibold text-slate-950 shadow-[0_16px_40px_rgba(250,204,21,0.26)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300"
+    className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-5 py-3 text-sm md:px-7 md:py-3.5 md:text-base font-semibold text-slate-950 shadow-[0_16px_40px_rgba(250,204,21,0.26)] transition duration-300 hover:-translate-y-1 hover:bg-yellow-300 whitespace-nowrap"
                 >
                   Get a Quote
                   <ArrowRight size={17} />
@@ -195,7 +195,7 @@ export default async function ProductDetail({ params }) {
                 <Link
                   href="https://wa.me/919829080341?text=Hi%20I%20am%20interested%20in%20your%20fencing%20products."
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-7 py-3.5 font-semibold text-white transition duration-300 hover:border-yellow-300/40 hover:bg-white/10"
+    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-3 text-sm md:px-7 md:py-3.5 md:text-base font-semibold text-white transition duration-300 hover:border-yellow-300/40 hover:bg-white/10 whitespace-nowrap"
                 >
                   <Phone size={16} />
                   Talk to Expert

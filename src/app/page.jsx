@@ -7,6 +7,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
+import StatsSection from "@/components/StatsSection";
 
 export const metadata = {
   title: "Parag Industries | Industrial Fencing Manufacturer — Jaipur, India",
@@ -39,7 +40,8 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <FAQ/>
-      <CTA/>
+      <CTA />
+      <StatsSection/>
     </>
   );
 }

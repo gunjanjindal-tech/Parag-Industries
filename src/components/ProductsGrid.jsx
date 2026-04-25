@@ -34,9 +34,6 @@ export function ProductCard({ item }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#051923] via-transparent to-transparent" />
 
-        <span className="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-semibold">
-          Premium
-        </span>
       </div>
 
       <div className="p-5">
@@ -44,9 +41,14 @@ export function ProductCard({ item }) {
           {item.title}
         </h3>
 
-        <div className="flex gap-1 mb-2">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <span key={i} className="text-yellow-400 text-sm">★</span>
+        <div className="flex flex-wrap gap-2 mb-3 min-h-[28px]">
+          {item.tags?.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="text-xs border border-white/20 bg-white/10 px-3 py-1 rounded-full text-white"
+            >
+              {tag}
+            </span>
           ))}
         </div>
 

@@ -179,14 +179,10 @@ export default function Footer() {
           </p>
 
           <p className="mt-3 md:mt-0 text-yellow-400">
-            Website by{" "}
-            <a
-              href="https://pashgen.com/"
-              target="_blank"
-              className="text-accent font-medium hover:underline"
-            >
-              PashGen
-            </a>
+           <a href="https://pashgen.com/"
+  target="_blank"
+  className="mt-3 md:mt-0 text-yellow-400 hover:underline"
+> Website by <span className="text-accent font-medium">PashGen</span></a>
           </p>
         </div>
 

@@ -30,63 +30,45 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* heading */}
-        <div className="text-center mb-14">
-          <p className="text-gray-300 text-sm tracking-widest mb-2">
-            TESTIMONIALS
-          </p>
+       <div className="text-center mb-14">
+  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] mb-6 text-yellow-300 backdrop-blur-xl">
+    Testimonials
+  </span>
 
-          <h2 className="text-white text-3xl md:text-5xl font-bold">
-            What Our Clients Say
-          </h2>
-        </div>
-
-        {/* grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
-              >
-                  <div className="flex gap-1 mb-4">
-  {Array.from({ length: 5 }).map((_, i) => (
-    <span
-      key={i}
-      className={`text-lg ${
-        i < item.rating ? "text-yellow-400" : "text-gray-500"
-      }`}
-    >
-      ★
-    </span>
-  ))}
+  <h2 className="text-white text-3xl md:text-5xl font-bold">
+    What Our Clients{" "}
+    <span className="text-yellow-400">Say</span>
+  </h2>
 </div>
 
-              {/* quote */}
-              <p className="text-gray-200 text-sm mb-6 leading-relaxed">
-                “{item.text}”
-              </p>
-
-              {/* user */}
-              <div>
-                <h4 className="text-white font-semibold">
-                  {item.name}
-                </h4>
-                <p className="text-gray-400 text-xs">
-                  {item.role}
-                </p>
-              </div>
-
-              {/* accent line */}
-              <div className="mt-4 h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-300"></div>
-
-            </motion.div>
+        {/* grid */}
+<div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2">
+  {testimonials.map((item, index) => (
+    <div key={index} className="shrink-0 w-[80vw] sm:w-[60vw] md:w-auto snap-start">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.15 }}
+        viewport={{ once: true }}
+        className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+      >
+        <div className="flex gap-1 mb-4">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span key={i} className={`text-lg ${i < item.rating ? "text-yellow-400" : "text-gray-500"}`}>
+              ★
+            </span>
           ))}
-
         </div>
+        <p className="text-gray-200 text-sm mb-6 leading-relaxed">"{item.text}"</p>
+        <div>
+          <h4 className="text-white font-semibold">{item.name}</h4>
+          <p className="text-gray-400 text-xs">{item.role}</p>
+        </div>
+        <div className="mt-4 h-[2px] w-0 bg-accent group-hover:w-full transition-all duration-300"></div>
+      </motion.div>
+    </div>
+  ))}
+</div>
 
       </div>
     </section>

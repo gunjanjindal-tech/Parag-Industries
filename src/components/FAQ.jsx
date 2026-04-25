@@ -53,13 +53,14 @@ export default function FAQ() {
 
         {/* heading */}
         <div className="text-center mb-16">
-          <p className="text-gray-400 text-sm tracking-widest mb-2">
-            FAQs
-          </p>
+         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] mb-6 text-yellow-300 backdrop-blur-xl">
+  FAQs
+</span>
 
-          <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-            Everything You Need to Know
-          </h2>
+         <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
+  Everything You Need{" "}
+  <span className="text-yellow-400">to Know</span>
+</h2>
 
           <p className="text-gray-300 mt-4 text-sm md:text-base max-w-2xl mx-auto">
             Find answers to common questions about our products, services, and project execution process.

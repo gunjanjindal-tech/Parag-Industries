@@ -27,10 +27,13 @@ export default function ProductsPage() {
     <main className="backdrop-blur-md  bg-[radial-gradient(_transparent_22%),linear-gradient(135deg,#051923_0%,#0d3b66_52%,#051923_100%)] ">
       
       {/* HERO SECTION */}
-     <section className="text-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
+      <section className="text-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold mb-6 uppercase tracking-[0.32em] text-yellow-300 backdrop-blur-xl">
+          Our Products
+        </span>
   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
           Premium Fencing Products
-          <span className="block bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent">
+          <span className="block text-yellow-400 bg-clip-text text-transparent">
             Built for Strength & Security
           </span>
         </h1>

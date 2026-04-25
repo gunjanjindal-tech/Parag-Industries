@@ -10,7 +10,10 @@ export default function ServicesPage() {
 
       {/* HERO */}
       <section className="px-4 sm:px-6 md:px-8 pt-8 pb-6 sm:pt-10 sm:pb-8 md:pt-12 md:pb-10 text-center max-w-7xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold mb-6 uppercase tracking-[0.32em] text-yellow-300 backdrop-blur-xl">
+          Our Services
+        </span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
           Fencing Solutions Built for{" "}
           <span className="text-yellow-400">Industrial Scale & Security</span>
         </h1>

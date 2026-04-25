@@ -10,18 +10,27 @@ export default function CTA() {
       <div className="absolute w-[400px] h-[400px] bg-accent/20 blur-[120px] rounded-full top-[-100px] right-[-100px]"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+{/* Badge */}
+<motion.span
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] mb-6 text-yellow-300 backdrop-blur-xl"
+>
+  Get In Touch
+</motion.span>
 
-        {/* heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-white text-3xl md:text-5xl font-bold leading-tight"
-        >
-          Get Complete Fencing Solutions <br />
-          for Your Next Project
-        </motion.h2>
-
+{/* heading */}
+<motion.h2
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="text-white text-3xl md:text-5xl font-bold leading-tight"
+>
+  Get Complete Fencing Solutions <br />
+  for Your{" "}
+  <span className="text-yellow-400">Next Project</span>
+</motion.h2>
         {/* subtext */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}

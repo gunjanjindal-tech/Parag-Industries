@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { products } from "../app/data/products";
+import { ChevronDown } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -47,10 +48,12 @@ export default function Navbar() {
             if (item.name === "Products") {
               return (
                 <div key={item.name} className="relative group">
-                  <Link href="/products" className="flex items-center gap-1 cursor-pointer">
+                
+<Link href="/products" className="flex items-center gap-1 cursor-pointer">
   {item.name}
-  <span className="text-xs">▾</span>
+  <ChevronDown size={16} className="mt-0.5" />
 </Link>
+
 
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-yellow-400 group-hover:w-full transition-all"></span>
 
@@ -120,9 +123,12 @@ export default function Navbar() {
   >
     {item.name}
   </Link>
-  <button onClick={() => setOpenProduct(!openProduct)}>
-    <span>{openProduct ? "▲" : "▼"}</span>
-  </button>
+<button onClick={() => setOpenProduct(!openProduct)}>
+  <ChevronDown 
+    size={18} 
+    className={`transition-transform duration-200 ${openProduct ? "rotate-180" : ""}`} 
+  />
+</button>
 </div>
 
                   {openProduct && (

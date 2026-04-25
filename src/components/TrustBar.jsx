@@ -32,32 +32,29 @@ export default function TrustBar() {
           }}
         >
           {/* DUPLICATE ARRAY FOR LOOP */}
-          {[...stats, ...stats].map((item, index) => (
-            <div
-  key={index}
-  className="group relative min-w-[240px] md:min-w-[260px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl px-4 md:px-16 py-4 text-center text-white transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:bg-white/10 hover:border-blue-400/40 hover:shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
->
+         {[...stats, ...stats].map((item, index) => (
+  <div
+    key={index}
+    className="group relative min-w-[180px] md:min-w-[260px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl px-4 md:px-16 py-3 md:py-4 text-center text-white transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:bg-white/10 hover:border-blue-400/40 hover:shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+  >
+    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-xl -z-10"></div>
 
-  {/* 🔥 GLOW */}
-  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-xl  -z-10"></div>
+    {/* ICON */}
+    <div className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-5 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-md shadow-yellow-500/20">
+      <item.icon className="text-black" size={20} />
+    </div>
 
-  {/* ICON */}
-  <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-md shadow-yellow-500/20">
-    <item.icon className="text-black" size={28} />
+    {/* NUMBER */}
+    <h3 className="text-lg md:text-3xl font-semibold text-accent tracking-tight">
+      {item.number}
+    </h3>
+
+    {/* LABEL */}
+    <p className="text-gray-300 text-xs md:text-sm mt-1 md:mt-2 tracking-wide leading-snug">
+      {item.label}
+    </p>
   </div>
-
-  {/* NUMBER */}
-  <h3 className="text-2xl md:text-3xl font-semibold text-accent tracking-tight">
-    {item.number}
-  </h3>
-
-  {/* LABEL */}
-  <p className="text-gray-300 text-sm mt-2 tracking-wide leading-snug">
-    {item.label}
-  </p>
-
-</div>
-          ))}
+))}
         </motion.div>
 
       </div>

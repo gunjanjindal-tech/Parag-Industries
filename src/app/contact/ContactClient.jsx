@@ -48,9 +48,9 @@ export default function ContactClient() {
         {/* HEADER */}
         <div className="text-center mb-10 sm:mb-12 md:mb-14">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-sm tracking-widest text-gray-300 font-medium mb-4">
-              CONTACT US
-            </p>
+           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] mb-6 text-yellow-300 backdrop-blur-xl">
+         Contact Us
+        </span>
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] tracking-tight">
               <span className="block sm:inline">Let&apos;s Build Your</span>{" "}
               <span className="text-yellow-400 block sm:inline">Next Project</span>

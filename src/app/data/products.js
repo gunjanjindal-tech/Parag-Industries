@@ -4,10 +4,7 @@ export const products = [
     slug: "chain-link-fencing",
     title: "Chain Link Fencing",
     desc: "Premium galvanized and PVC-coated chain link fencing with precision-woven diamond mesh — built for strength, flexibility, and long-term outdoor performance across industrial, residential, and infrastructure projects.",
-    images: [
-  "/products/gi-chain-link.jpg",
-  "/products/pvc-chain-link.jpg"
-],
+    image: "/products/gi-chain-link.jpg",
     tags: ["Galvanized", "PVC-Coated", "Customisable", "High Tensile"],
     stats: [
       { label: "Security Grade", value: "Perimeter"      },
@@ -62,11 +59,8 @@ export const products = [
     slug: "barbed-wire",
     title: "Barbed Wire",
     desc: "High-tensile galvanized barbed wire with sharp, uniformly spaced barbs and heavy zinc coating — providing reliable perimeter deterrence for agricultural, industrial, defence, and infrastructure applications.",
-    images: [
-  "/products/barbed-wire.jpg",
-  "/products/barbed.jpg"
-],
-    tags: ["GI", "PVC-Coated", "High Tensile", "Anti-Intrusion"],
+    image: "/products/barbed-wire.jpg",
+tags: ["High Tensile", "Heavy Zinc Coating"],
     stats: [
       { label: "Security Grade", value: "High Deterrent" },
       { label: "Service Life",   value: "15+ Years"      },
@@ -123,11 +117,8 @@ export const products = [
     slug: "welded-wire-mesh",
     title: "Welded Wire Mesh",
     desc: "Electrically welded high-quality mild steel and galvanized wire mesh panels — offering uniform strength, dimensional stability, and versatile performance for fencing, reinforcement, and safety applications.",
-    images: [
-  "/products/welded-mesh.jpg",
-  "/products/weldmesh.jpg"
-],
-    tags: ["MS", "GI", "SS", "PVC-Coated", "Electric Welded"],
+    image: "/products/welded-mesh.jpg",
+    tags: ["Powder-Coated", "Electric Welded"],
     stats: [
       { label: "Weld Type",     value: "Electric Welded"   },
       { label: "Service Life",  value: "20+ Years"         },
@@ -145,7 +136,7 @@ export const products = [
       },
       {
         title: "Low Maintenance",
-        desc: "Galvanized and PVC-coated options drastically reduce corrosion, requiring minimal upkeep over the product's lifetime.",
+        desc: "Galvanized and Powder-Coated options drastically reduce corrosion, requiring minimal upkeep over the product's lifetime.",
       },
       {
         title: "Versatility",
@@ -183,11 +174,8 @@ export const products = [
     slug: "concertina-coil",
     title: "Concertina Coil",
     desc: "High-tensile galvanized razor wire coils with sharp blades and high spring resilience — engineered for maximum intrusion deterrence in defence, critical infrastructure, and high-security perimeter applications.",
-    images: [
-  "/products/concertina-coil.jpg",
-  "/products/concertina.jpg"
-],
-    tags: ["BTO", "CBT", "GI", "SS", "Maximum Security"],
+    image: "/products/concertina-coil.jpg",
+tags: ["Razor Sharp Blades", "Hot-Dip Galvanized", "CBT"],
     stats: [
       { label: "Security Grade", value: "Maximum"   },
       { label: "Service Life",   value: "20+ Years" },
@@ -243,16 +231,13 @@ export const products = [
     slug: "anti-climb-fence",
     title: "Anti-Climb Fence",
     desc: "High-strength galvanized welded mesh panels with dense small-aperture design — engineered to prevent climbing, cutting, and vandalism for airports, data centres, schools, and critical infrastructure.",
-    images: [
-  "/products/anti-climb.jpg",
-  "/products/anti-climb-fence.jpg"
-],
-    tags: ["High Security", "GI", "PVC-Coated", "Anti-Vandal", "Small Aperture"],
+    image: "/products/anti-climb.jpg",
+    tags: ["High Security", "GI", "Powder-Coated", "Anti-Vandal", "Small Aperture"],
     stats: [
       { label: "Security Grade", value: "Anti-Climb"    },
       { label: "Service Life",   value: "25+ Years"     },
       { label: "Aperture",       value: "Small / Dense" },
-      { label: "Finish",         value: "GI / PVC"      },
+      { label: "Finish",         value: "GI / Powder-Coated"      },
     ],
     overviewCards: [
       {
@@ -269,14 +254,14 @@ export const products = [
       },
       {
         title: "Low Maintenance",
-        desc: "Hot-dip galvanized or PVC-coated finish ensures corrosion-free, maintenance-light performance over an extended service life.",
+        desc: "Hot-dip galvanized or Powder-Coated finish ensures corrosion-free, maintenance-light performance over an extended service life.",
       },
     ],
     features: [
       "Manufactured from high-strength galvanized steel wire",
       "Dense, small-aperture mesh design prevents finger and toe holds",
       "Rigid welded construction with high resistance to cutting and bending",
-      "Hot-dip galvanized / PVC-coated finish for superior corrosion protection",
+      "Hot-dip galvanized / Powder-Coated finish for superior corrosion protection",
       "Clean, flat panel design with tamper-resistant fixing options",
       "Available in various panel sizes, wire diameters, and coating colours",
     ],
@@ -303,15 +288,12 @@ export const products = [
     slug: "3d-fence",
     title: "3D Fence",
     desc: "Modern welded steel panel fencing with distinctive 3D V-bends for enhanced rigidity and a professional aesthetic — the ideal perimeter solution for residential, commercial, and institutional projects.",
-    images: [
-      "/products/3d-mesh.jpg",
-  "/products/3d-fence.jpg"
-],
-    tags: ["Welded Panels", "GI", "PVC-Coated", "3D V-Bend", "Modern Design"],
+    image: "/products/3d-fence.jpg",
+    tags: ["Welded Panels", "Powder-Coated", "3D V-Bend", "Modern Design"],
     stats: [
       { label: "Panel Type",   value: "3D V-Bend"        },
       { label: "Service Life", value: "20+ Years"        },
-      { label: "Finish",       value: "GI + PVC"         },
+      { label: "Finish",       value: "GI + Powder-Coated"         },
       { label: "Fixing",       value: "Tamper-Resistant" },
     ],
     overviewCards: [
@@ -321,7 +303,7 @@ export const products = [
       },
       {
         title: "Modern Aesthetics",
-        desc: "Smooth surface finish with multi-colour PVC coating options enhances the visual appeal of any residential or commercial property.",
+        desc: "Smooth surface finish with multi-colour powder-coated options enhances the visual appeal of any residential or commercial property.",
       },
       {
         title: "Security",
@@ -329,14 +311,14 @@ export const products = [
       },
       {
         title: "Low Maintenance",
-        desc: "Hot-dip galvanized core with PVC overcoat provides decades of corrosion-free performance with virtually no upkeep required.",
+        desc: "Hot-dip galvanized core with powder-coated provides decades of corrosion-free performance with virtually no upkeep required.",
       },
     ],
     features: [
       "Manufactured from high-quality welded steel wire panels",
       "Distinctive 3D V-bends for enhanced rigidity and structural strength",
       "Electrically welded intersections ensure uniform load distribution",
-      "Hot-dip galvanized and PVC-coated finish for superior corrosion resistance",
+      "Hot-dip galvanized and Powder-coated finish for superior corrosion resistance",
       "Smooth, aesthetic design with tamper-resistant fastening system",
       "Available in multiple panel heights, wire diameters, and colour options",
     ],
@@ -363,15 +345,12 @@ export const products = [
     slug: "knotted-wire-fence",
     title: "Knotted Wire Fence",
     desc: "Heavy-duty galvanized knotted wire fencing with flexible mesh that adapts to uneven terrain — the preferred choice for agricultural boundaries, livestock enclosures, and large-scale perimeter protection.",
-    images: [
-    "/products/tknotted-fence.webp",
-  "/products/knotted-fence-1.webp"
-],
-    tags: ["GI", "PVC-Coated", "Flexible", "Agricultural", "High Tensile"],
+  image: "/products/knotted-fence-1.webp",
+    tags: [ "Powder-Coated", "Flexible", "Agricultural", "High Tensile"],
     stats: [
       { label: "Terrain",      value: "Flexible / Uneven" },
       { label: "Service Life", value: "15+ Years"         },
-      { label: "Wire Type",    value: "GI / PVC"          },
+      { label: "Wire Type",    value: "GI / Powder-Coated"          },
       { label: "Mesh",         value: "Knotted"           },
     ],
     overviewCards: [
@@ -393,7 +372,7 @@ export const products = [
       },
     ],
     features: [
-      "Made from high-quality galvanized or PVC-coated steel wire",
+      "Made from high-quality galvanized or Powder-Coated steel wire",
       "Strong knotted intersections for superior stability and load-bearing capacity",
       "Flexible mesh adapts to uneven terrains without compromising strength",
       "Corrosion-resistant coating for long-term outdoor performance",
@@ -423,11 +402,8 @@ export const products = [
     slug: "gabion-box",
     title: "Gabion Box",
     desc: "Modular galvanized wire mesh cages filled with stones or aggregates — an environmentally friendly, flexible, and durable solution for retaining walls, riverbank protection, and large-scale civil engineering projects.",
-    images: [
-  "/products/gabion-box-pvc-coated.jpg",
-  "/products/galvanized-gabion-box.webp"
-],
-    tags: ["GI", "PVC-Coated", "Modular", "Civil Engineering", "Permeable"],
+    image: "/products/gabion-box-pvc-coated.jpg",
+    tags: [ "PVC-Coated", "Modular", "Civil Engineering", "Permeable"],
     stats: [
       { label: "Structure",    value: "Modular Cage"      },
       { label: "Service Life", value: "30+ Years"         },
@@ -483,11 +459,8 @@ export const products = [
     slug: "gi-ms-angles",
     title: "GI / MS Angles",
     desc: "High-quality Mild Steel and Galvanized Iron structural angles with accurate 90° bends and high load-bearing capacity — the backbone of fencing frameworks, structural supports, and fabrication works.",
-    images: [
-  "/products/gi-angle.jpg",
-  "/products/angel.jpg"
-],
-    tags: ["MS", "GI", "Structural", "Hot-Dip Galvanized", "Fabrication"],
+    image: "/products/gi-angle.jpg",
+    tags: ["Structural", "Hot-Dip Galvanized", "Fabrication"],
     stats: [
       { label: "Material",      value: "MS / GI"          },
       { label: "Service Life",  value: "25+ Years"        },
@@ -543,12 +516,8 @@ export const products = [
     slug: "gi-wire",
     title: "GI Wire",
     desc: "Hot-dip galvanized mild steel wire available in multiple gauges — flexible, corrosion-resistant, and reliable for binding, fencing, agriculture, and a wide range of industrial and construction applications.",
-   images: [
-  "/products/gi-wire.jpg",
-  "/products/ms-wire.jpeg",
-  "/products/pvc-coated-gi-wire.webp"
-],
-    tags: ["GI", "MS", "PVC-Coated", "Multi-Gauge", "Binding Wire"],
+    image: "/products/gi-wire.jpg",
+    tags: [ "PVC-Coated", "Multi-Gauge", "Binding Wire"],
     stats: [
       { label: "Material",     value: "GI / MS / PVC" },
       { label: "Service Life", value: "15+ Years"     },

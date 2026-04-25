@@ -51,57 +51,41 @@ export default function WhyChooseUs() {
 
         {/* heading */}
         <div className="text-center mb-14">
-          <p className="text-gray-200 text-sm tracking-widest mb-2">
-            WHY CHOOSE US
-          </p>
+  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] mb-6 text-yellow-300 backdrop-blur-xl">
+    Why Choose Us
+  </span>
 
-          <h2 className="text-white text-3xl md:text-5xl font-bold">
-            Trusted Industrial Fencing Experts
-          </h2>
-        </div>
+  <h2 className="text-white text-3xl md:text-5xl font-bold">
+    Trusted Industrial Fencing{" "}
+    <span className="text-yellow-400">Experts</span>
+  </h2>
+</div>
 
         {/* grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-         {points.map((item, index) => {
-  const Icon = item.icon;
-
-  return (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
-    >
-      
-      {/* ICON */}
-      <div className="flex justify-center mb-5">
-      <div className="w-16 h-16 rounded-full 
-bg-gradient-to-br from-yellow-400 to-yellow-600 
-flex items-center justify-center 
-shadow-lg shadow-yellow-500/20">
-
-  <Icon size={30} className="text-black" />
-</div>
+<div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2">
+  {points.map((item, index) => {
+    const Icon = item.icon;
+    return (
+      <div key={index} className="shrink-0 w-[75vw] sm:w-auto snap-start">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+        >
+          <div className="flex justify-center mb-5">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg shadow-yellow-500/20">
+              <Icon size={30} className="text-black" />
+            </div>
+          </div>
+          <h3 className="text-white text-lg font-semibold mb-2">{item.title}</h3>
+          <p className="text-gray-200 text-sm">{item.desc}</p>
+        </motion.div>
       </div>
-
-      {/* TITLE */}
-      <h3 className="text-white text-lg font-semibold mb-2">
-        {item.title}
-      </h3>
-
-      {/* DESC */}
-      <p className="text-gray-200 text-sm">
-        {item.desc}
-      </p>
-
-    </motion.div>
-  );
-})}
-
-        </div>
+    );
+  })}
+</div>
 
       </div>
     </section>
