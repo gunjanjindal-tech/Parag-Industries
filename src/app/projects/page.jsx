@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MotionCard from "@/components/MotionCard";
 import { ArrowRight } from "lucide-react";
+import StatsBar from "@/components/StatsBar";
 
 const stats = [
   { number: "500+", label: "Solar Projects Delivered" },
@@ -96,20 +97,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* STATS BAR */}
-<section className="pb-20">
-  <div className="flex sm:grid sm:grid-cols-4 gap-4 overflow-x-auto px-6 max-w-6xl sm:mx-auto scrollbar-hide snap-x snap-mandatory">
-    {stats.map((stat, i) => (
-      <div key={i} className="shrink-0 w-[80vw] sm:w-auto snap-start">
-        <MotionCard delay={i * 0.1}>
-          <div className="p-8 text-center">
-            <p className="text-4xl sm:text-5xl font-black text-yellow-400">{stat.number}</p>
-            <p className="mt-2 text-slate-300 font-medium">{stat.label}</p>
-          </div>
-        </MotionCard>
-      </div>
-    ))}
-  </div>
-</section>
+<StatsBar />
 
       {/* SECTOR CARDS */}
       <section className="px-6 pb-20 max-w-7xl mx-auto">

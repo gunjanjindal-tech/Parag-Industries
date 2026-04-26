@@ -8,9 +8,9 @@ export default function ProductsViewMore({ remaining }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="mt-10 flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 w-full">
 
-      {/* PRODUCTS */}
+      {/* EXPANDED PRODUCTS — same grid spec as ProductsGrid's initial grid */}
       {showAll && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
           {remaining.map((item) => (

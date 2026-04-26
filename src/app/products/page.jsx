@@ -45,8 +45,9 @@ export default function ProductsPage() {
 {/* WHY CHOOSE US */}
       <section className="max-w-7xl mx-auto px-4 py-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12">
-          Why Choose Parag Industries?
-        </h2>
+  Why Choose{" "}
+  <span className="text-yellow-400">Parag Industries?</span>
+</h2>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
           {[
             {
@@ -83,7 +84,7 @@ export default function ProductsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            How It Works
+            How It <span className=" text-yellow-400  text-transparent">Works</span> 
           </h2>
           <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
             A simple and transparent process to get you the right fencing solution, delivered on time.
@@ -130,7 +131,7 @@ export default function ProductsPage() {
 {/* SECTORS WE SERVE */}
 <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
   <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12">
-    Sectors We Serve
+    Sectors We <span className=" text-yellow-400  text-transparent">Serve</span>
   </h2>
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
     {[
@@ -157,7 +158,7 @@ export default function ProductsPage() {
       {/* CTA SECTION */}
       <section className=" text-white text-center py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8">
         <h2 className="text-3xl md:text-5xl font-bold">
-          Need a fencing solution?
+          Need a <span className=" text-yellow-400  text-transparent">fencing solution?</span>
         </h2>
         <p className="mt-3 text-gray-300">
           Get a free quote and let our experts recommend the right product for your project.
