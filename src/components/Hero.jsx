@@ -55,8 +55,10 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/ecatalogue"
-                className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-7 py-3.5 font-semibold text-slate-950 shadow-[0_16px_36px_rgba(250,204,21,0.28)] transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-300"
+                 href="/ParagIndustries_Catalogue.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-7 py-3.5 font-semibold text-slate-950 shadow-[0_16px_36px_rgba(250,204,21,0.28)] transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-300"
               >
                 <Download size={17} />
                 Download E-Catalogue

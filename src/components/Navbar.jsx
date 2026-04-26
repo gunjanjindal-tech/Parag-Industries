@@ -88,7 +88,7 @@ export default function Navbar() {
 
           {/* ✅ E-Catalogue (Tablet only: <950px && >=640px) */}
           <a
-            href="/catalogue.pdf"
+            href="/ParagIndustries_Catalogue.pdf"
             target="_blank"
             className="hidden sm:inline-block [@media(min-width:950px)]:inline-block [@media(max-width:640px)]:hidden whitespace-nowrap bg-yellow-400 text-black px-4 py-1.5 rounded-lg font-semibold"
           >
@@ -166,7 +166,7 @@ export default function Navbar() {
 
           {/* Mobile CTA */}
           <a
-            href="/catalogue.pdf"
+            href="/ParagIndustries_Catalogue.pdf"
             target="_blank"
             className="block text-center cursor-pointer bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold mt-3"
           >

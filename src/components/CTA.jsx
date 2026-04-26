@@ -51,9 +51,14 @@ export default function CTA() {
         >
 
           {/* Download */}
-          <button className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg hover:cursor-pointer hover:bg-yellow-500">
-            Download E-Catalogue
-          </button>
+           <a
+          href="/ParagIndustries_Catalogue.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg hover:cursor-pointer hover:bg-yellow-500"
+>
+  Download E-Catalogue
+</a>
 
           {/* WhatsApp */}
           <a
