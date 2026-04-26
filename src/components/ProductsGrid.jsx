@@ -1,5 +1,4 @@
 // components/ProductsGrid.jsx
-// NO "use client" — server component
 import { products } from "@/app/data/products";
 import ProductsGridClient from "./ProductsGridClient";
 
