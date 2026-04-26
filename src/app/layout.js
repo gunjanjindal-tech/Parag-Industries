@@ -30,7 +30,7 @@ export const metadata = {
     "Parag Industries is a leading manufacturer and supplier of industrial fencing solutions in Jaipur, India. 30+ years of experience supplying Chain Link, Welded Mesh, Barbed Wire, Concertina Coil, Anti Climb Fence, and Gabion Box to defence, railways, NHAI, and infrastructure projects across India.",
 
    icons: {
-    icon: "/ParagIndustriesFavicon.jpg",
+    icon: "/ParagIndustriesFavicon.ico",
   },
    
   keywords: [
